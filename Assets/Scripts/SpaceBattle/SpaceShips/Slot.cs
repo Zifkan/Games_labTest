@@ -11,12 +11,15 @@ namespace SpaceBattle.SpaceShips
         [SerializeField]
         private SlotType _slotType;
 
+        [SerializeField] 
+        private Transform _transformPlace;
+        
+        private IShipModule _module;
+        
         public SlotType Type => _slotType;
 
         public bool IsFree => _module != null;
-
-        private IShipModule _module;
-
+        public Transform TransformPlace => _transformPlace;
         public void SetModule(IShipModule module)
         {
             _module = module;

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762bc87a99cd4f3ab0ba2697133bede9, type: 3}
   m_Name: HealthModule
   m_EditorClassIdentifier: 
+  _availableCount: 10
+  _slotType: 2
   Mesh: {fileID: 0}
   _health: 50

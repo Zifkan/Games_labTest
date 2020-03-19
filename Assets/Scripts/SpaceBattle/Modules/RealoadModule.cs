@@ -5,24 +5,24 @@ using UnityEditor;
 
 namespace SpaceBattle.Modules
 {
-    public class RealoadModule : ShipModule , IShipModule
+    public class RealoadModule : ShipModule, IShipModule
     {
         public SlotType SlotType => _slotType;
-        
-        public void OnAttachedToShip(BaseSpaceShip ship)
+
+        public void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
         {
-            throw new System.NotImplementedException();
+            AttachModuleToSlot(slot.TransformPlace);
         }
 
         public void OnRemovedFromShip(BaseSpaceShip ship)
         {
             throw new System.NotImplementedException();
         }
-        
+
         [MenuItem("Assets/Modules/RealoadModule")]
-                 public static void CreateAsset ()
-                 {
-                     ScriptableObjectUtility.CreateAsset<RealoadModule> ();
-                 }
+        public static void CreateAsset()
+        {
+            ScriptableObjectUtility.CreateAsset<RealoadModule>();
+        }
     }
 }

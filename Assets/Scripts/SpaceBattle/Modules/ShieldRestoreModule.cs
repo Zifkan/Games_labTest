@@ -13,9 +13,10 @@ namespace SpaceBattle.Modules
         
         public SlotType SlotType => _slotType;
         
-        public void OnAttachedToShip(BaseSpaceShip ship)
+        public void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
         {
             ship.SetHealth(_shieldRestorePercent);
+            AttachModuleToSlot(slot.TransformPlace);
         }    
 
         public void OnRemovedFromShip(BaseSpaceShip ship)

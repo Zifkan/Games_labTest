@@ -20,7 +20,7 @@ namespace SpaceBattle.Modules
 
         public SlotType SlotType => _slotType;
 
-        public void OnAttachedToShip(BaseSpaceShip ship)
+        public void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
         {
            
         }

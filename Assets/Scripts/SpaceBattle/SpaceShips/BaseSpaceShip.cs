@@ -22,9 +22,13 @@ namespace SpaceBattle.SpaceShips
         private List<Slot> _slots;
         
         private readonly Dictionary<SlotType,List<Slot>> _slotsCollection = new Dictionary<SlotType, List<Slot>>();
+        private readonly LinkedList<IShipModule> _usedModules = new LinkedList<IShipModule>();
+        
         private float _health;
         private float _shield;
         private float _shieldRestorePerSec;
+
+        public LinkedList<IShipModule> UsedModules => _usedModules;
 
         public void SetHealth(float value)
         {
@@ -41,7 +45,7 @@ namespace SpaceBattle.SpaceShips
             _shieldRestorePerSec += value;
         }
 
-        public void AddModule(IShipModule module)
+        public bool AddModule(IShipModule module)
         {
             var slots = _slotsCollection[module.SlotType];
 
@@ -50,14 +54,19 @@ namespace SpaceBattle.SpaceShips
             if (freeSlot != null)
             {
                 freeSlot.SetModule(module);
-                module.OnAttachedToShip(this);
+                module.OnAttachedToShip(this,freeSlot);
+                UsedModules.AddLast(module);
+                return true;
             }
+
+            return false;
         }
 
         public void RemoveModule(IShipModule module)
         {
            // _modules.Remove(module);
             module.OnRemovedFromShip(this);
+            UsedModules.Remove(module);
         }
 
         void Awake()

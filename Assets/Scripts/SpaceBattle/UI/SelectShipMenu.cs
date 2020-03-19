@@ -11,15 +11,10 @@ namespace SpaceBattle.UI
         private CustomButton _button;
 
         [SerializeField] 
-        private GameObject _modulesPanel;
+        private GameObject _modulesPanelCatalog;
         [SerializeField] 
-        private GameObject _weaponsPanel;
-
-        [SerializeField] 
-        private Text _weaponSlotsCountText;
-        [SerializeField] 
-        private Text _moduleSlotsCountText;
-        
+        private GameObject _usedModulesPanel;
+  
         private ShipConstructor _shipConstructor;
         private ObjectPool<CustomButton> _buttonsPool;
 
@@ -32,37 +27,36 @@ namespace SpaceBattle.UI
         {
            _shipConstructor = GetComponent<ShipConstructor>();
            
-           for (int i = 0; i < _shipConstructor.Modules.Count; i++)
+           for (int i = 0; i < _shipConstructor.AvailableModules.Count; i++)
            {
               var btn = _buttonsPool.Get();
-              btn.transform.SetParent(_modulesPanel.transform);
+              btn.transform.SetParent(_modulesPanelCatalog.transform);
               var index = i;
-              btn.Init(_shipConstructor.Modules[i].name, () => OnModuleButtonPressed(index));
+              btn.Init(_shipConstructor.AvailableModules[i].name, () => OnModuleButtonPressed(index));
            }
-           
-           for (int i = 0; i < _shipConstructor.Weapons.Count; i++)
-           {
-               var btn = _buttonsPool.Get();
-               btn.transform.SetParent(_weaponsPanel.transform);
-               var index = i;
-               btn.Init(_shipConstructor.Weapons[i].name, () => OnWeaponButtonPressed(index));
-           }
-           
-           
-           // _moduleSlotsCountText.text = _shipConstructor.CurrentShip.FreeModulesSlots().ToString();
-           // _weaponSlotsCountText.text = _shipConstructor.CurrentShip.FreeWeaponSlots().ToString();
         }
 
         private void OnModuleButtonPressed(int i)
         {
-            _shipConstructor.SetupModule(i);
-           // _moduleSlotsCountText.text = _shipConstructor.CurrentShip.FreeModulesSlots().ToString();
+           var isModuleSet = _shipConstructor.SetupModule(i);
+
+           if (isModuleSet)
+           {
+               RefreshUsedModules();
+           }
         }
-        
-        private void OnWeaponButtonPressed(int i)
+
+        private void RefreshUsedModules()
         {
-            _shipConstructor.SetupWeapon(i);
-          //  _weaponSlotsCountText.text = _shipConstructor.CurrentShip.FreeWeaponSlots().ToString();
+            var setupModules = _shipConstructor.GetSetupModules();
+
+            for (int i = 0; i < setupModules.Count; i++)
+            {
+                var btn = _buttonsPool.Get();
+                btn.transform.SetParent(_usedModulesPanel.transform);
+                var index = i;
+                btn.Init(setupModules[i].ToString(), () => OnModuleButtonPressed(index));
+            }
         }
     }
 }

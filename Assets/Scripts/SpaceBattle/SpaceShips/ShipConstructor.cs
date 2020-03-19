@@ -1,33 +1,43 @@
 using System.Collections.Generic;
+using System.Linq;
 using SpaceBattle.Modules;
 using UnityEngine;
+using Object = System.Object;
 
 namespace SpaceBattle.SpaceShips
 {
     public class ShipConstructor : MonoBehaviour
     {
-        [SerializeField]
-        private List<ShipModule> _weapons;
-        
-        [SerializeField]
-        private List<ShipModule> _modules;
-        
         [SerializeField] 
         private BaseSpaceShip _currentShip;
 
-        public List<ShipModule> Modules => _modules;
-        public List<ShipModule> Weapons => _weapons;
-
+        private List<ShipModule> _availableModules;
+        
+        private List<ShipModule> _setupModules;
+        
         public BaseSpaceShip CurrentShip => _currentShip;
 
-        public void SetupModule(int index)
+        public List<ShipModule> AvailableModules => _availableModules;
+
+        private void Awake()
         {
-            CurrentShip.AddModule((IShipModule)Modules[index]); 
+            _availableModules = Resources.LoadAll<ShipModule>("SpaceBattle/Modules/").OrderByDescending(module => module).ToList();
         }
-        
-        public void SetupWeapon(int index)
+
+        public bool  SetupModule(int index)
         {
-          //  CurrentShip.AddWeapon((IShipModule)Weapons[index]); 
+            var instance = Instantiate(AvailableModules[index]);
+            
+            var isModuleSet = CurrentShip.AddModule((IShipModule)instance);
+
+            //TODO: May be check for available count 
+
+            return isModuleSet;
+        }
+
+        public List<IShipModule> GetSetupModules()
+        {
+            return _currentShip.UsedModules.ToList();
         }
     }
 }

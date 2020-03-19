@@ -12,10 +12,11 @@ namespace SpaceBattle.Modules
         private float _health = 50f;
         
         public SlotType SlotType => _slotType;
-        
-        public void OnAttachedToShip(BaseSpaceShip ship)
+
+        public void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
         {
-          ship.SetHealth(_health);
+            ship.SetHealth(_health);
+            AttachModuleToSlot(slot.TransformPlace);
         }
 
         public void OnRemovedFromShip(BaseSpaceShip ship)

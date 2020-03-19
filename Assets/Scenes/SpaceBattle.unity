@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &953160392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1016,14 +1016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862ae13f86bd4f91b124a5f74adfa7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 11400000, guid: d3100ac0090503a4f84c8f4faf9462de, type: 2}
-  - {fileID: 11400000, guid: a325683b95f5af942b3b5c0731abda7d, type: 2}
-  - {fileID: 11400000, guid: 26922ca7b43a8d646baae466c3b1740c, type: 2}
-  _modules:
-  - {fileID: 11400000, guid: 2519e83e3055e234a91e6f303c99d478, type: 2}
-  - {fileID: 11400000, guid: f41c9693b390b3e44b873e33150a8eb3, type: 2}
-  - {fileID: 11400000, guid: a226902e736cfad479269eacbf4c9631, type: 2}
   _currentShip: {fileID: 1788301647}
 --- !u!114 &1185637414
 MonoBehaviour:
