@@ -1,4 +1,6 @@
 using SpaceBattle.SpaceShips;
+using SpaceBattle.Utils;
+using UnityEditor;
 using UnityEngine;
 
 namespace SpaceBattle.Modules
@@ -23,6 +25,12 @@ namespace SpaceBattle.Modules
         public void OnRemovedFromShip(BaseSpaceShip ship)
         {
             
+        }
+        
+        [MenuItem("Assets/Modules/Weapon")]
+        public static void CreateAsset ()
+        {
+            ScriptableObjectUtility.CreateAsset<Weapon> ();
         }
     }
 }

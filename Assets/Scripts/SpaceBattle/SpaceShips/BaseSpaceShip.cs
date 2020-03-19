@@ -52,13 +52,28 @@ namespace SpaceBattle.SpaceShips
         }
 
 
-        public void AddModule(IShipModule module)
+        public bool AddModule(IShipModule module)
         {
             if (_modules.Count < _modulesCount)
             {
                 _modules.Add(module);
                 module.OnAttachedToShip(this);
+                return true;
             }
+            
+            return false;
+        }
+        
+        public bool AddWeapon(IShipModule weapon)
+        {
+            if (_weapons.Count < _modulesCount)
+            {
+                _weapons.Add(weapon);
+                weapon.OnAttachedToShip(this);
+                return true;
+            }
+            
+            return false;
         }
 
         public void RemoveModule(IShipModule module)

@@ -32,9 +32,12 @@
               <e p="ShipConstructor.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
+              <e p="CustomButton.cs" t="Include" />
               <e p="SelectShipMenu.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
+              <e p="IPoolable.cs" t="Include" />
+              <e p="ObjectPool.cs" t="Include" />
               <e p="ScriptableObjectUtility.cs" t="Include" />
             </e>
           </e>

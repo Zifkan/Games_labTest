@@ -17,10 +17,16 @@ namespace SpaceBattle.SpaceShips
         private BaseSpaceShip _currentShip;
 
         public List<ShipModule> Modules => _modules;
+        public List<ShipModule> Weapons => _weapons;
 
         public void SetupModule(int index)
         {
-            _currentShip.AddModule((IShipModule) Modules[index]);
+            _currentShip.AddModule((IShipModule)Modules[index]);
+        }
+        
+        public void SetupWeapon(int index)
+        {
+            _currentShip.AddWeapon((IShipModule)Weapons[index]);
         }
     }
 }

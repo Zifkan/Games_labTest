@@ -73,7 +73,10 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\Weapon.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\BaseSpaceShip.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\ShipConstructor.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\UI\CustomButton.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\UI\SelectShipMenu.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\Utils\IPoolable.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ScriptableObjectUtility.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
