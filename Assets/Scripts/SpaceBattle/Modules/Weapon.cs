@@ -1,3 +1,4 @@
+using SpaceBattle.Enums;
 using SpaceBattle.SpaceShips;
 using SpaceBattle.Utils;
 using UnityEditor;
@@ -16,7 +17,9 @@ namespace SpaceBattle.Modules
         public float CoolDown => _coolDown;
 
         public float Damage => _damage;
-        
+
+        public SlotType SlotType => _slotType;
+
         public void OnAttachedToShip(BaseSpaceShip ship)
         {
            

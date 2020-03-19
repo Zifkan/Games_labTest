@@ -1,3 +1,4 @@
+using SpaceBattle.Enums;
 using SpaceBattle.SpaceShips;
 using SpaceBattle.Utils;
 using UnityEditor;
@@ -9,6 +10,7 @@ namespace SpaceBattle.Modules
     {
         [SerializeField]
         private float _shield = 50f;
+        public SlotType SlotType => _slotType;
         
         public void OnAttachedToShip(BaseSpaceShip ship)
         {

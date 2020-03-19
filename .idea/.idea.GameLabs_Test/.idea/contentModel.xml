@@ -18,6 +18,9 @@
             <e p="Station.cs" t="Include" />
           </e>
           <e p="SpaceBattle" t="Include">
+            <e p="Enums" t="Include">
+              <e p="SlotType.cs" t="Include" />
+            </e>
             <e p="Modules" t="Include">
               <e p="HealthModule.cs" t="Include" />
               <e p="IShipModule.cs" t="Include" />
@@ -30,6 +33,7 @@
             <e p="SpaceShips" t="Include">
               <e p="BaseSpaceShip.cs" t="Include" />
               <e p="ShipConstructor.cs" t="Include" />
+              <e p="Slot.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
               <e p="CustomButton.cs" t="Include" />

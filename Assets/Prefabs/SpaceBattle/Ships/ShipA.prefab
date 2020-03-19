@@ -110,4 +110,10 @@ MonoBehaviour:
   _shieldBase: 80
   _shieldRestorePerSecBase: 1
   _modulesCount: 2
-  _weponsCount: 2
+  _weaponsCount: 2
+  _slots:
+  - _slotType: 2
+  - _slotType: 2
+  - _slotType: 1
+  - _slotType: 1
+  - _slotType: -1

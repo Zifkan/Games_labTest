@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Metro\Graph.cs" />
      <Compile Include="Assets\Scripts\Metro\MetroBehaviour.cs" />
      <Compile Include="Assets\Scripts\Metro\Station.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\Enums\SlotType.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\HealthModule.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\IShipModule.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\RealoadModule.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\Weapon.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\BaseSpaceShip.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\ShipConstructor.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\Slot.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\UI\CustomButton.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\UI\SelectShipMenu.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\IPoolable.cs" />

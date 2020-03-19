@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using SpaceBattle.Enums;
 using SpaceBattle.Modules;
 using UnityEngine;
 
@@ -16,22 +19,9 @@ namespace SpaceBattle.SpaceShips
         private float _shieldRestorePerSecBase = 1f;
 
         [SerializeField] 
-        private int _modulesCount;
+        private List<Slot> _slots;
         
-        [SerializeField] 
-        private int _weponsCount;
-        
-        private List<IShipModule> _weapons = new List<IShipModule>();
-        
-        private List<IShipModule> _modules = new List<IShipModule>();
-
-        void Awake()
-        {
-            _health = _healthBase;
-            _shield = _shieldBase;
-            _shieldRestorePerSec = _shieldRestorePerSecBase;
-        }
-
+        private readonly Dictionary<SlotType,List<Slot>> _slotsCollection = new Dictionary<SlotType, List<Slot>>();
         private float _health;
         private float _shield;
         private float _shieldRestorePerSec;
@@ -51,50 +41,60 @@ namespace SpaceBattle.SpaceShips
             _shieldRestorePerSec += value;
         }
 
+        public void AddModule(IShipModule module)
+        {
+            var slots = _slotsCollection[module.SlotType];
 
-        public bool AddModule(IShipModule module)
-        {
-            if (_modules.Count < _modulesCount)
+            var freeSlot = slots.FirstOrDefault(slot => slot.IsFree && (slot.Type & module.SlotType) != 0);
+
+            if (freeSlot != null)
             {
-                _modules.Add(module);
+                freeSlot.SetModule(module);
                 module.OnAttachedToShip(this);
-                return true;
             }
-            
-            return false;
-        }
-        
-        public bool AddWeapon(IShipModule weapon)
-        {
-            if (_weapons.Count < _modulesCount)
-            {
-                _weapons.Add(weapon);
-                weapon.OnAttachedToShip(this);
-                return true;
-            }
-            
-            return false;
         }
 
         public void RemoveModule(IShipModule module)
         {
-            _modules.Remove(module);
+           // _modules.Remove(module);
             module.OnRemovedFromShip(this);
         }
 
-
-        private void Start()
+        void Awake()
         {
+            SlotsInit();
             
-        }
+            _health = _healthBase;
+            _shield = _shieldBase;
+            _shieldRestorePerSec = _shieldRestorePerSecBase;
 
-        private void InitModules()
+        }
+        
+        private void SlotsInit()
         {
-            for (int i = 0; i < _modules.Count; i++)
+            var slotTypeList = (SlotType[]) Enum.GetValues(typeof(SlotType));
+            
+            for (int i = 0; i < _slots.Count; i++)
             {
-                var module = _modules[i];
-                
-                module.OnAttachedToShip(this);
+                var slot = _slots[i];
+
+                for (int j = 0; j < slotTypeList.Length; j++)
+                {
+                    var slotType = slotTypeList[j];
+                    
+                    if ((slot.Type & slotType) != 0)
+                    {
+                        if (!_slotsCollection.ContainsKey(slotType))
+                        {
+                            var list = new List<Slot> { slot };
+                            _slotsCollection.Add(slotType,list);
+                        }
+                        else
+                        {
+                            _slotsCollection[slotType].Add(slot);
+                        }
+                    }
+                }
             }
         }
     }
