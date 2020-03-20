@@ -26,16 +26,15 @@
             </e>
             <e p="Modules" t="Include">
               <e p="Factory" t="Include">
+                <e p="HealthModuleFactory.cs" t="Include" />
                 <e p="IShipModuleFactory.cs" t="Include" />
+                <e p="ReloadModuleFactory.cs" t="Include" />
                 <e p="ShieldModuleFactory.cs" t="Include" />
+                <e p="ShieldRestoreModuleFactory.cs" t="Include" />
+                <e p="WeaponModuleFactory.cs" t="Include" />
               </e>
-              <e p="HealthModule.cs" t="Include" />
               <e p="IShipModule.cs" t="Include" />
-              <e p="RealoadModule.cs" t="Include" />
-              <e p="ShieldModule.cs" t="Include" />
-              <e p="ShieldRestoreModule.cs" t="Include" />
               <e p="ShipModule.cs" t="Include" />
-              <e p="Weapon.cs" t="Include" />
             </e>
             <e p="SpaceShips" t="Include">
               <e p="BaseSpaceShip.cs" t="Include" />

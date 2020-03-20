@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules.Factory
 {
-    public class ShieldModuleFactory : ScriptableObject, IShipModuleFactory
+    public class ReloadModuleFactory : ScriptableObject, IShipModuleFactory
     {
         [SerializeField]
-        private float _additionalShield;
+        private float _reloadReduceRatio;
         
         private readonly Queue<IShipModule> _pool = new Queue<IShipModule>();
     
         public IShipModule GetOrCreateModule()
         {
-            return  _pool.Count > 0 ? _pool.Dequeue() : new ShieldModule(this,_additionalShield);
+            return  _pool.Count > 0 ? _pool.Dequeue() : new ReloadModule(this,_reloadReduceRatio);
         }
         
         public void ReleaseModule(IShipModule module)
@@ -25,33 +25,30 @@ namespace SpaceBattle.Modules.Factory
             _pool.Enqueue(module);
         }
         
-        [MenuItem("Assets/Modules/ShieldModuleFactory")]
+        [MenuItem("Assets/Modules/ReloadModuleFactory")]
         public static void CreateAsset ()
         {
-            ScriptableObjectUtility.CreateAsset<ShieldModuleFactory> ();
+            ScriptableObjectUtility.CreateAsset<ReloadModuleFactory> ();
         }
     }
-
-    public class ShieldModule : BaseShipModule<ShieldModuleFactory>
+    
+    public class ReloadModule : BaseShipModule<ReloadModuleFactory>
     {
-        private float _additionalShield;
-        
-        public float AdditionalShield => _additionalShield;
-
-        public ShieldModule(ShieldModuleFactory factory,float value)
+        private float _reloadReduceRatio;
+        public ReloadModule(ReloadModuleFactory factory, float reloadReduceRatio)
         {
             _factory = factory;
-            _additionalShield = value;
+            _reloadReduceRatio = reloadReduceRatio;
         }
 
         public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
         {
-                
+           
         }
 
         public override void OnRemovedFromShip(BaseSpaceShip ship)
         {
-                
+           
         }
     }
 }

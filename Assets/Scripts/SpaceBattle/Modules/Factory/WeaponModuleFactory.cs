@@ -6,16 +6,19 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules.Factory
 {
-    public class ShieldModuleFactory : ScriptableObject, IShipModuleFactory
+    public class WeaponModuleFactory : ScriptableObject, IShipModuleFactory
     {
         [SerializeField]
-        private float _additionalShield;
+        private float _coolDown;
+
+        [SerializeField]
+        private float _damage;
         
         private readonly Queue<IShipModule> _pool = new Queue<IShipModule>();
     
         public IShipModule GetOrCreateModule()
         {
-            return  _pool.Count > 0 ? _pool.Dequeue() : new ShieldModule(this,_additionalShield);
+            return  _pool.Count > 0 ? _pool.Dequeue() : new Weapon(this,_coolDown,_damage);
         }
         
         public void ReleaseModule(IShipModule module)
@@ -25,33 +28,31 @@ namespace SpaceBattle.Modules.Factory
             _pool.Enqueue(module);
         }
         
-        [MenuItem("Assets/Modules/ShieldModuleFactory")]
+        [MenuItem("Assets/Modules/WeaponModuleFactory")]
         public static void CreateAsset ()
         {
-            ScriptableObjectUtility.CreateAsset<ShieldModuleFactory> ();
+            ScriptableObjectUtility.CreateAsset<WeaponModuleFactory> ();
         }
     }
-
-    public class ShieldModule : BaseShipModule<ShieldModuleFactory>
+    public class Weapon :BaseShipModule<WeaponModuleFactory>
     {
-        private float _additionalShield;
-        
-        public float AdditionalShield => _additionalShield;
+        private float _coolDown;
+        private float _damage;
 
-        public ShieldModule(ShieldModuleFactory factory,float value)
+        public Weapon(WeaponModuleFactory factory, float coolDown, float damage)
         {
             _factory = factory;
-            _additionalShield = value;
+            _coolDown = coolDown;
+            _damage = damage;
         }
-
         public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
         {
-                
+           // Debug.Log("Attach "+ name);
         }
 
         public override void OnRemovedFromShip(BaseSpaceShip ship)
         {
-                
+        
         }
     }
 }
