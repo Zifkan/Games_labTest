@@ -6,20 +6,18 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public class ShieldRestoreModule :ShipModule , IShipModule
+    public class ShieldRestoreModule :BaseShipModule , IShipModule
     {
         [SerializeField][Range(0,1)]
         private float _shieldRestorePercent = 0.2f;
-        
-        public SlotType SlotType => _slotType;
-        
-        public void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
+       
+        public override void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
         {
             ship.SetHealth(_shieldRestorePercent);
             AttachModuleToSlot(slot.TransformPlace);
         }    
 
-        public void OnRemovedFromShip(BaseSpaceShip ship)
+        public override void OnRemovedFromShip(BaseSpaceShip ship)
         {
             ship.SetHealth(-_shieldRestorePercent);
         }

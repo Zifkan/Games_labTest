@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using SpaceBattle.CustomEventArgs;
 using SpaceBattle.Modules;
+using SpaceBattle.UI;
 using UnityEngine;
-using Object = System.Object;
 
 namespace SpaceBattle.SpaceShips
 {
@@ -11,33 +13,58 @@ namespace SpaceBattle.SpaceShips
         [SerializeField] 
         private BaseSpaceShip _currentShip;
 
-        private List<ShipModule> _availableModules;
+        [SerializeField] 
+        private SelectShipMenu _selectShipMenu;
         
-        private List<ShipModule> _setupModules;
+        
+        private List<IShipModule> _availableModules;
         
         public BaseSpaceShip CurrentShip => _currentShip;
-
-        public List<ShipModule> AvailableModules => _availableModules;
-
+        
+        private IShipMenu _shipMenu;
+        
         private void Awake()
         {
-            _availableModules = Resources.LoadAll<ShipModule>("SpaceBattle/Modules/").OrderByDescending(module => module).ToList();
-        }
-
-        public bool  SetupModule(int index)
-        {
-            var instance = Instantiate(AvailableModules[index]);
+            _shipMenu = _selectShipMenu;
             
-            var isModuleSet = CurrentShip.AddModule((IShipModule)instance);
-
-            //TODO: May be check for available count 
-
-            return isModuleSet;
+            _availableModules = Resources.LoadAll<BaseShipModule>("SpaceBattle/Modules/").Select(module => (IShipModule)module).ToList();
+            
+         
         }
 
-        public List<IShipModule> GetSetupModules()
+        private void Start()
         {
-            return _currentShip.UsedModules.ToList();
+            _shipMenu.SetModulesCollection(_availableModules);
+        }
+
+        private void OnEnable()
+        {
+            _shipMenu.SetModuleEvent+= OnSetModule;
+            _shipMenu.DetachModuleEvent+=OnDetachModule;
+        }
+        
+        private void OnDisable()
+        {
+            _shipMenu.SetModuleEvent -= OnSetModule;
+            _shipMenu.DetachModuleEvent -=OnDetachModule;
+        }
+
+        private void OnDetachModule(object sender, ButtonSlotEventArgs e)
+        {
+            
+        }
+
+        private void OnSetModule(object sender, ButtonModuleEventArgs e)
+        {
+            var instance = Instantiate((BaseShipModule)e.Module);
+            
+            CurrentShip.AddModule(instance);
+        }
+
+      
+        public void  DetachModule(int index)
+        {
+            //    CurrentShip.RemoveModule((IShipModule)module);
         }
     }
 }

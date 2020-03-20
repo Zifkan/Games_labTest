@@ -6,19 +6,19 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public class ShieldModule : ShipModule , IShipModule
+    public class ShieldModule : BaseShipModule
     {
         [SerializeField]
         private float _shield = 50f;
         public SlotType SlotType => _slotType;
         
-        public void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
+        public override void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
         {
             ship.SetHealth(_shield);
             AttachModuleToSlot(slot.TransformPlace);
         }
 
-        public void OnRemovedFromShip(BaseSpaceShip ship)
+        public override void OnRemovedFromShip(BaseSpaceShip ship)
         {
             ship.SetHealth(-_shield);
         }

@@ -1030,10 +1030,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 2024262680894120042, guid: 582e10d250920e144ad7e540e02cef2c, type: 3}
-  _modulesPanel: {fileID: 67117976}
-  _weaponsPanel: {fileID: 953160391}
-  _weaponSlotsCountText: {fileID: 35261748}
-  _moduleSlotsCountText: {fileID: 1645611307}
+  _modulesPanelCatalog: {fileID: 67117976}
+  _usedModulesPanel: {fileID: 0}
 --- !u!224 &1185637415
 RectTransform:
   m_ObjectHideFlags: 0

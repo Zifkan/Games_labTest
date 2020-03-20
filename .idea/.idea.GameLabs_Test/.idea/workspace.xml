@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/RealoadModule.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/RealoadModule.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/HealthModule.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/HealthModule.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldModule.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldModule.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldRestoreModule.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldRestoreModule.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponA.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponA.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponB.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponB.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponC.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponC.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SpaceBattle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SpaceBattle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" afterDir="false" />
@@ -23,10 +31,13 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +52,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/60/185665d5/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,19 +68,25 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/ba/a8b0a699/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/c0/e3592da0/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/99/b1e84b1d/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/d7/906ab45e/UnsafeUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/5c/a3358ede/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/c7/49987bcc/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C074160-DD1A-4D91-9B45-B6E4C27A3BAC/e4/3884ee5f/Module.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/d9/2072fc00/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../ocean-simulation/Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/61/79edf22f/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ScriptableObjectUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldRestoreModule.cs" root0="FORCE_HIGHLIGHTING" />
@@ -79,10 +98,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GeometryTest/PerlinNoiseJob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GeometryTest/FlagBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/FindWay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Shield.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Module.cs" />
@@ -91,18 +106,30 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/Button.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Enums/SlotType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldRestoreModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/EventArgs/ButtonEventArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldRestoreModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ModuleFactoryScriptableObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ModuleFactoryScriptableObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" />
       </list>
     </option>
   </component>
@@ -172,10 +199,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1240" height="438" key="DebuggerActiveHint" timestamp="1584650590334">
+    <state width="1240" height="438" key="DebuggerActiveHint" timestamp="1584704983226">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1240" height="438" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1584650590334" />
+    <state width="1240" height="438" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1584704983226" />
     <state width="1877" height="174" key="GridCell.Tab.0.bottom" timestamp="1584653796517">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -240,9 +267,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="174" key="GridCell.Tab.3.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584653796409" />
-    <state x="770" y="231" key="RiderGenerateDialog" timestamp="1584632611973">
+    <state x="770" y="231" key="RiderGenerateDialog" timestamp="1584734489327">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="770" y="231" key="RiderGenerateDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584632611973" />
+    <state x="770" y="231" key="RiderGenerateDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584734489327" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1584701777778">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584701777778" />
   </component>
 </project>

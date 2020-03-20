@@ -8,5 +8,7 @@ namespace SpaceBattle.Modules
         SlotType SlotType { get; }
         void OnAttachedToShip(BaseSpaceShip ship,Slot slot);
         void OnRemovedFromShip(BaseSpaceShip ship);
+        bool IsValid { get; }
+        void Release();
     }
 }

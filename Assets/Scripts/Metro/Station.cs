@@ -4,14 +4,14 @@ namespace Metro
 {
     public class StationInfo
     {
-        public Station Vertex { get; set; }
+        public Station Station { get; }
         public bool IsUnvisited { get; set; }
         public int EdgesWeightSum { get; set; }
         public Station PreviousVertex { get; set; }
      
-        public StationInfo(Station vertex)
+        public StationInfo(Station station)
         {
-            Vertex = vertex;
+            Station = station;
             IsUnvisited = true;
             EdgesWeightSum = int.MaxValue;
             PreviousVertex = null;
@@ -40,7 +40,7 @@ namespace Metro
             Paths = new List<Path>();
         }
 
-        public void AddEdge(Path newEdge)
+        private void AddEdge(Path newEdge)
         {
             Paths.Add(newEdge);
         }

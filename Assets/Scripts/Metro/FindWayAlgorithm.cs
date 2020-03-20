@@ -17,9 +17,6 @@ namespace Metro
             this.graph = graph;
         }
 
-        /// <summary>
-        /// Инициализация информации
-        /// </summary>
         void InitInfo()
         {
             infos = new List<StationInfo>();
@@ -29,16 +26,12 @@ namespace Metro
             }
         }
 
-        /// <summary>
-        /// Получение информации о вершине графа
-        /// </summary>
-        /// <param name="v">Вершина</param>
-        /// <returns>Информация о вершине</returns>
+    
         StationInfo GetVertexInfo(Station v)
         {
             foreach (var i in infos)
             {
-                if (i.Vertex.Equals(v))
+                if (i.Station.Equals(v))
                 {
                     return i;
                 }
@@ -67,23 +60,13 @@ namespace Metro
             return minVertexInfo;
         }
 
-        /// <summary>
-        /// Поиск кратчайшего пути по названиям вершин
-        /// </summary>
-        /// <param name="startName">Название стартовой вершины</param>
-        /// <param name="finishName">Название финишной вершины</param>
-        /// <returns>Кратчайший путь</returns>
+        
         public string FindShortestPath(string startName, string finishName)
         {
             return FindShortestPath(graph.FindVertex(startName), graph.FindVertex(finishName));
         }
 
-        /// <summary>
-        /// Поиск кратчайшего пути по вершинам
-        /// </summary>
-        /// <param name="startVertex">Стартовая вершина</param>
-        /// <param name="finishVertex">Финишная вершина</param>
-        /// <returns>Кратчайший путь</returns>
+     
         public string FindShortestPath(Station startVertex, Station finishVertex)
         {
             InitInfo();
@@ -103,31 +86,23 @@ namespace Metro
             return GetPath(startVertex, finishVertex);
         }
 
-        /// <summary>
-        /// Вычисление суммы весов ребер для следующей вершины
-        /// </summary>
-        /// <param name="info">Информация о текущей вершине</param>
+     
         void SetSumToNextVertex(StationInfo info)
         {
             info.IsUnvisited = false;
-            foreach (var e in info.Vertex.Paths)
+            foreach (var e in info.Station.Paths)
             {
                 var nextInfo = GetVertexInfo(e.ConnectedVertex);
                 var sum = info.EdgesWeightSum + e.EdgeWeight;
                 if (sum < nextInfo.EdgesWeightSum)
                 {
                     nextInfo.EdgesWeightSum = sum;
-                    nextInfo.PreviousVertex = info.Vertex;
+                    nextInfo.PreviousVertex = info.Station;
                 }
             }
         }
 
-        /// <summary>
-        /// Формирование пути
-        /// </summary>
-        /// <param name="startVertex">Начальная вершина</param>
-        /// <param name="endVertex">Конечная вершина</param>
-        /// <returns>Путь</returns>
+       
         string GetPath(Station startVertex, Station endVertex)
         {
             var path = endVertex.ToString();

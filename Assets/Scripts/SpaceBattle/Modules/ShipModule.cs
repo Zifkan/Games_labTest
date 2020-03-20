@@ -1,24 +1,49 @@
-using System;
 using SpaceBattle.Enums;
+using SpaceBattle.Modules.Factory;
+using SpaceBattle.SpaceShips;
 using Unity.Mathematics;
 using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public class ShipModule : ScriptableObject
+    public abstract class BaseShipModule<T> : IShipModule where T : IShipModuleFactory
     {
-        [SerializeField] private UInt32 _availableCount = 10;
-
-        [SerializeField] protected SlotType _slotType;
-
+        protected SlotType _slotType;
+        protected T _factory;
+        
         public GameObject Mesh;
-        //public uint AvailableCount => _availableCount;
-
+        
         protected void AttachModuleToSlot(Transform slotTransform)
         {
+            if (Mesh == null) return;
             Mesh.transform.parent.SetParent(slotTransform);
             Mesh.transform.localPosition = Vector3.zero;
             Mesh.transform.rotation = quaternion.identity;
         }
+
+        public SlotType SlotType => _slotType;
+
+        public abstract void OnAttachedToShip(BaseSpaceShip ship, Slot slot);
+
+        public abstract void OnRemovedFromShip(BaseSpaceShip ship);
+        
+        public bool IsValid => _factory != null;
+        public void Release()
+        {
+            if(_factory == null) return;
+            
+            _factory.ReleaseModule(this);
+            _factory = default(T);
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

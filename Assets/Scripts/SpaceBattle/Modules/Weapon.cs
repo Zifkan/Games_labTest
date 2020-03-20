@@ -1,12 +1,10 @@
 using SpaceBattle.Enums;
 using SpaceBattle.SpaceShips;
-using SpaceBattle.Utils;
-using UnityEditor;
 using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public class Weapon :ShipModule , IShipModule
+    public class Weapon :BaseShipModule
     {
         [SerializeField]
         private float _coolDown;
@@ -19,21 +17,14 @@ namespace SpaceBattle.Modules
         public float Damage => _damage;
 
         public SlotType SlotType => _slotType;
-
-        public void OnAttachedToShip(BaseSpaceShip ship,Slot slot)
+        public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
         {
-           
+           // Debug.Log("Attach "+ name);
         }
 
-        public void OnRemovedFromShip(BaseSpaceShip ship)
+        public override void OnRemovedFromShip(BaseSpaceShip ship)
         {
-            
-        }
         
-        [MenuItem("Assets/Modules/Weapon")]
-        public static void CreateAsset ()
-        {
-            ScriptableObjectUtility.CreateAsset<Weapon> ();
         }
     }
 }

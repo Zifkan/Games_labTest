@@ -1,12 +1,18 @@
+using System;
+using System.Collections.Generic;
+using SpaceBattle.CustomEventArgs;
+using SpaceBattle.Modules;
 using SpaceBattle.SpaceShips;
 using SpaceBattle.Utils;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace SpaceBattle.UI
 {
-    public class SelectShipMenu : MonoBehaviour
+    public class SelectShipMenu : MonoBehaviour,IShipMenu
     {
+        public event EventHandler<ButtonModuleEventArgs> SetModuleEvent;
+        public event EventHandler<ButtonSlotEventArgs> DetachModuleEvent;
+
         [SerializeField] 
         private CustomButton _button;
 
@@ -18,45 +24,49 @@ namespace SpaceBattle.UI
         private ShipConstructor _shipConstructor;
         private ObjectPool<CustomButton> _buttonsPool;
 
+        public void SetModulesCollection(List<IShipModule> modules)
+        {
+            for (int i = 0; i < modules.Count; i++)
+            {
+                var btn = _buttonsPool.Get();
+                btn.transform.SetParent(_modulesPanelCatalog.transform);
+                var module = modules[i];
+                btn.Init(modules[i].SlotType.ToString(), () => OnModuleButtonPressed(module));
+            }
+        }
+        
+        
         private void Awake()
         {
+            _shipConstructor = GetComponent<ShipConstructor>();
             _buttonsPool = new ObjectPool<CustomButton>(_button, 10, transform);
         }
 
         private void Start()
         {
-           _shipConstructor = GetComponent<ShipConstructor>();
-           
-           for (int i = 0; i < _shipConstructor.AvailableModules.Count; i++)
-           {
-              var btn = _buttonsPool.Get();
-              btn.transform.SetParent(_modulesPanelCatalog.transform);
-              var index = i;
-              btn.Init(_shipConstructor.AvailableModules[i].name, () => OnModuleButtonPressed(index));
-           }
+          
         }
 
-        private void OnModuleButtonPressed(int i)
+        private void OnModuleButtonPressed(IShipModule module)
         {
-           var isModuleSet = _shipConstructor.SetupModule(i);
-
-           if (isModuleSet)
-           {
-               RefreshUsedModules();
-           }
+            OnSetModule(module);
         }
 
-        private void RefreshUsedModules()
+        private void OnModuleDetachPressed(int index)
         {
-            var setupModules = _shipConstructor.GetSetupModules();
-
-            for (int i = 0; i < setupModules.Count; i++)
-            {
-                var btn = _buttonsPool.Get();
-                btn.transform.SetParent(_usedModulesPanel.transform);
-                var index = i;
-                btn.Init(setupModules[i].ToString(), () => OnModuleButtonPressed(index));
-            }
+            
         }
+
+
+        protected virtual void OnSetModule(IShipModule module)
+        {
+            SetModuleEvent?.Invoke(this, new ButtonModuleEventArgs(module));
+        }
+
+        protected virtual void OnDetachModule(Slot slot)
+        {
+            DetachModuleEvent?.Invoke(this, new ButtonSlotEventArgs(slot));
+        }
+
     }
 }

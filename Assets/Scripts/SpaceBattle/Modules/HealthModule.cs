@@ -6,28 +6,17 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public class HealthModule :ShipModule , IShipModule
+    public class HealthModule : BaseShipModule 
     {
-        [SerializeField]
-        private float _health = 50f;
-        
-        public SlotType SlotType => _slotType;
-
-        public void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
+        public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
         {
             ship.SetHealth(_health);
             AttachModuleToSlot(slot.TransformPlace);
         }
 
-        public void OnRemovedFromShip(BaseSpaceShip ship)
+        public override void OnRemovedFromShip(BaseSpaceShip ship)
         {
             ship.SetHealth(-_health);
-        }
-        
-        [MenuItem("Assets/Modules/HealthModule")]
-        public static void CreateAsset ()
-        {
-            ScriptableObjectUtility.CreateAsset<HealthModule> ();
         }
     }
 }

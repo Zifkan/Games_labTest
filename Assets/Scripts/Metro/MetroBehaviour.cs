@@ -7,8 +7,7 @@ namespace Metro
         private void Start()
         {
             var g = new Graph();
-
-            //добавление вершин
+          
             g.AddVertex("A");
             g.AddVertex("B");
             g.AddVertex("C");
@@ -17,7 +16,6 @@ namespace Metro
             g.AddVertex("F");
             g.AddVertex("G");
 
-            //добавление ребер
             g.AddEdge("A", "B", 22);
             g.AddEdge("A", "C", 33);
             g.AddEdge("A", "D", 61);
