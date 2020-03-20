@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa05249f5cd344c6aa7240079daf43ad, type: 3}
-  m_Name: ShieldModule
+  m_Script: {fileID: 11500000, guid: d1c3b883274647dbb374f600b98875d9, type: 3}
+  m_Name: ShieldModuleFactory
   m_EditorClassIdentifier: 
-  _availableCount: 10
-  _slotType: 2
-  Mesh: {fileID: 0}
-  _shield: 50
+  _additionalShield: 0
