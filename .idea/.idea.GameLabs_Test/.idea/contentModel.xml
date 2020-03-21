@@ -50,6 +50,7 @@
               <e p="IPoolable.cs" t="Include" />
               <e p="ObjectPool.cs" t="Include" />
               <e p="ScriptableObjectUtility.cs" t="Include" />
+              <e p="ShipPlacer.cs" t="Include" />
             </e>
           </e>
         </e>

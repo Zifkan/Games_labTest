@@ -21,12 +21,7 @@ namespace SpaceBattle.Modules.Factory
 
         public IShipModule GetOrCreateModule()
         {
-            if (_pool.Count > 0)
-            {
-                return _pool.Dequeue();
-            }
-            
-            return new ReloadModule(this, _reloadReduceRatio, _slotType, _model){ModuleName = _moduleName};
+            return _pool.Count > 0 ? _pool.Dequeue() : new ReloadModule(this, _reloadReduceRatio, _slotType, _model){ModuleName = _moduleName};
         }
 
         public void ReleaseModule(IShipModule module)

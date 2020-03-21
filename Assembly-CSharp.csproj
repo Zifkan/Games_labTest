@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\IPoolable.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ScriptableObjectUtility.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\Utils\ShipPlacer.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

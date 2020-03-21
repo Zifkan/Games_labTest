@@ -3,6 +3,7 @@ using System.Linq;
 using SpaceBattle.CustomEventArgs;
 using SpaceBattle.Modules.Factory;
 using SpaceBattle.UI;
+using SpaceBattle.Utils;
 using UnityEngine;
 
 namespace SpaceBattle.SpaceShips
@@ -14,8 +15,11 @@ namespace SpaceBattle.SpaceShips
 
         [SerializeField] 
         private SelectShipMenu _selectShipMenu;
+
+        [SerializeField] 
+        private ShipPlacer _shipPlacer;
         
-        
+        private readonly List<BaseSpaceShip> _ships = new List<BaseSpaceShip>();
         private List<IShipModuleFactory> _availableModules;
         
         public BaseSpaceShip CurrentShip => _currentShip;
@@ -26,7 +30,14 @@ namespace SpaceBattle.SpaceShips
         {
             _shipMenu = _selectShipMenu;
             _availableModules = Resources.LoadAll<ScriptableObject>("SpaceBattle/Modules/").Select(o => (IShipModuleFactory)o).ToList();
-           // _availableModules[0].GetOrCreateModule()
+            
+            var shipResources = Resources.LoadAll<BaseSpaceShip>("SpaceBattle/Ships/");
+
+            for (int i = 0; i < shipResources.Length; i++)
+            {
+                _ships.Add(Instantiate(shipResources[i],new Vector3(0,0,0) , Quaternion.identity));
+            }
+            _shipPlacer.PlaceShips(_ships);
         }
 
         private void Start()
