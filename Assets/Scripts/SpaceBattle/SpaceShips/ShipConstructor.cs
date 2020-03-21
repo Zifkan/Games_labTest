@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using SpaceBattle.CustomEventArgs;
@@ -8,50 +9,32 @@ using UnityEngine;
 
 namespace SpaceBattle.SpaceShips
 {
-    public class ShipConstructor : MonoBehaviour
+    public class ShipConstructor : IDisposable
     {
-        [SerializeField] 
-        private SelectShipMenu _selectShipMenu;
-
-        [SerializeField] 
-        private ShipPlacer _shipPlacer;
-        
-        private readonly List<BaseSpaceShip> _ships = new List<BaseSpaceShip>();
+        private List<BaseSpaceShip> _ships = new List<BaseSpaceShip>();
         private List<IShipModuleFactory> _availableModules;
 
         private BaseSpaceShip _currentShip;
         
         private IShipMenu _shipMenu;
+
+        public List<BaseSpaceShip> Ships => _ships;
         
-        private void Awake()
+        public void Init(List<BaseSpaceShip> ships, IShipMenu shipMenu , ShipPlacer placer)
         {
-            _shipMenu = _selectShipMenu;
+            _ships = ships;
+            _shipMenu = shipMenu;
             _availableModules = Resources.LoadAll<ScriptableObject>("SpaceBattle/Modules/").Select(o => (IShipModuleFactory)o).ToList();
+            placer.PlaceShips(_ships);
             
-            SetShips();
-        }
-
-        private void SetShips()
-        {
-            var shipResources = Resources.LoadAll<BaseSpaceShip>("SpaceBattle/Ships/");
-
-            for (int i = 0; i < shipResources.Length; i++)
-            {
-                _ships.Add(Instantiate(shipResources[i],new Vector3(0,0,0) , Quaternion.identity));
-            }
-            _shipPlacer.PlaceShips(_ships);
-        }
-
-        private void Start()
-        {
             _shipMenu.SetModulesCollection(_availableModules);
-            
             _shipMenu.SetShipButtons(_ships);
-
             SetCurrentShip(0);
+
+            EventSubscription();
         }
 
-        private void OnEnable()
+        private void EventSubscription()
         {
             _shipMenu.SetModuleEvent += OnSetModule;
             _shipMenu.DetachModuleEvent += OnDetachModule;
@@ -69,12 +52,6 @@ namespace SpaceBattle.SpaceShips
             RefreshSlots();
         }
 
-        private void OnDisable()
-        {
-            _shipMenu.SetModuleEvent -= OnSetModule;
-            _shipMenu.DetachModuleEvent -= OnDetachModule;
-        }
-
         private void OnDetachModule(object sender, ButtonSlotEventArgs e)
         {
             _currentShip.RemoveModule(e.Slot);
@@ -90,6 +67,12 @@ namespace SpaceBattle.SpaceShips
         private void RefreshSlots()
         {
             _shipMenu.Refresh(_currentShip.SlotsCollection);
+        }
+
+        public void Dispose()
+        {
+            _shipMenu.SetModuleEvent -= OnSetModule;
+            _shipMenu.DetachModuleEvent -= OnDetachModule;
         }
     }
 }

@@ -39,7 +39,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9119842988246336147}
-  - component: {fileID: 5688781299633802744}
+  - component: {fileID: 9029652924745112178}
+  - component: {fileID: 983239898}
   m_Layer: 0
   m_Name: ShipConstructor
   m_TagString: Untagged
@@ -62,7 +63,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &5688781299633802744
+--- !u!114 &9029652924745112178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,9 +72,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 9119842988246336146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862ae13f86bd4f91b124a5f74adfa7a1, type: 3}
+  m_Script: {fileID: 11500000, guid: cd1933332b3c48df956b705ffed8a3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentShip: {fileID: 0}
-  _selectShipMenu: {fileID: 0}
+  _shipMenu: {fileID: 0}
+  _placer: {fileID: 983239898}
+--- !u!114 &983239898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119842988246336146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35219a5bcdf74b928586bceb1eed0374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _shipsContainer: {fileID: 5586506176842595952}
+  _startPos: {x: -4, y: 0}
+  _columnCount: 5
+  _offset: {x: 2, y: 2}

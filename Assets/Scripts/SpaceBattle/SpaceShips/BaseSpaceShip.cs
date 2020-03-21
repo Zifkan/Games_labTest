@@ -22,6 +22,8 @@ namespace SpaceBattle.SpaceShips
         [SerializeField] 
         private List<Slot> _slots;
 
+        private GameStage _gameStage;
+
         private float _maxHealth;
         private float _maxShield;
         
@@ -46,7 +48,6 @@ namespace SpaceBattle.SpaceShips
         {
             _maxShield =_shieldBase + value;
         }
-        
 
         public void SetReloadFactor(float value)
         {
@@ -58,8 +59,7 @@ namespace SpaceBattle.SpaceShips
             _shieldRestoreFactorPercent += value;
         }
         
-        
-        public bool AddModule(IShipModule module)
+        public void AddModule(IShipModule module)
         {
             var slots = _slotsCollection[module.SlotType];
 
@@ -69,10 +69,7 @@ namespace SpaceBattle.SpaceShips
             {
                 freeSlot.SetModule(module);
                 module.OnAttachedToShip(this,freeSlot);
-                return true;
             }
-
-            return false;
         }
 
         public void RemoveModule(Slot slot)
@@ -91,19 +88,39 @@ namespace SpaceBattle.SpaceShips
             _weapons.Remove(weapon);
         }
 
-        private void Awake()
+        public void Fight()
         {
-            SlotsInit();
+            _gameStage = GameStage.Battle;
+        }
+
+        public void Reset()
+        {
+            _gameStage = GameStage.ShipConstruct;
             
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
             
             _currentHealth = _maxHealth;
             _currentShieldRestorePerSec = _shieldRestorePerSecBase;
+            
+            _slots.ForEach(slot =>
+            {
+                if (!slot.IsFree)
+                    slot.Module.OnAttachedToShip(this, slot);
+            });
+        }
+
+        private void Awake()
+        {
+            SlotsInit();
+
+            Reset();
         }
 
         private void Update()
         {
+            if (_gameStage == GameStage.ShipConstruct) return;
+            
             ShieldRestore();
             Fire();
 

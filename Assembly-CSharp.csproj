@@ -65,7 +65,9 @@
      <Compile Include="Assets\Scripts\Metro\MetroBehaviour.cs" />
      <Compile Include="Assets\Scripts\Metro\Station.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\CustomEventArgs\ButtonEventArgs.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\Enums\GameStage.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Enums\SlotType.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\GameController.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\Factory\HealthModuleFactory.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\Factory\IShipModuleFactory.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\Factory\ReloadModuleFactory.cs" />

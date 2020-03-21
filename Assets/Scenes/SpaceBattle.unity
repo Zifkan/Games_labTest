@@ -270,28 +270,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &983239896 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9119842988246336146, guid: 4108e62c10b2b1041a75b7e8e4a39121,
-    type: 3}
-  m_PrefabInstance: {fileID: 9119842987333488202}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &983239898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983239896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35219a5bcdf74b928586bceb1eed0374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shipsContainer: {fileID: 1852076584}
-  _startPos: {x: -4, y: 0}
-  _columnCount: 5
-  _offset: {x: 2, y: 2}
 --- !u!1 &1149034409
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,12 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5f4ef25141461cbd1322330b33d826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1852076584 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5586506176842595952, guid: 4108e62c10b2b1041a75b7e8e4a39121,
-    type: 3}
-  m_PrefabInstance: {fileID: 9119842987333488202}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &432231201529048778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -594,20 +566,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5688781299633802744, guid: 4108e62c10b2b1041a75b7e8e4a39121,
+    - target: {fileID: 9029652924745112178, guid: 4108e62c10b2b1041a75b7e8e4a39121,
         type: 3}
-      propertyPath: _selectShipMenu
+      propertyPath: _shipMenu
       value: 
       objectReference: {fileID: 1185637414}
-    - target: {fileID: 5688781299633802744, guid: 4108e62c10b2b1041a75b7e8e4a39121,
-        type: 3}
-      propertyPath: _shipPlacer
-      value: 
-      objectReference: {fileID: 983239898}
     - target: {fileID: 9119842988246336146, guid: 4108e62c10b2b1041a75b7e8e4a39121,
         type: 3}
       propertyPath: m_Name
-      value: ShipConstructor
+      value: GameController
       objectReference: {fileID: 0}
     - target: {fileID: 9119842988246336147, guid: 4108e62c10b2b1041a75b7e8e4a39121,
         type: 3}
