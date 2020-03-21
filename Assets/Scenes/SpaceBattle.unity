@@ -1017,6 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentShip: {fileID: 1788301647}
+  _selectShipMenu: {fileID: 1185637414}
 --- !u!114 &1185637414
 MonoBehaviour:
   m_ObjectHideFlags: 0

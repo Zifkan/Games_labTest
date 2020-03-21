@@ -12,7 +12,6 @@ namespace SpaceBattle.UI
     {
         public event EventHandler<ButtonModuleEventArgs> SetModuleEvent;
         public event EventHandler<ButtonSlotEventArgs> DetachModuleEvent;
-       
 
         [SerializeField] 
         private CustomButton _button;
@@ -41,11 +40,6 @@ namespace SpaceBattle.UI
         {
             _shipConstructor = GetComponent<ShipConstructor>();
             _buttonsPool = new ObjectPool<CustomButton>(_button, 10, transform);
-        }
-
-        private void Start()
-        {
-          
         }
 
         private void OnModuleButtonPressed(IShipModuleFactory moduleFactory)

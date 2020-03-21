@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ShieldModuleFactory
   m_EditorClassIdentifier: 
   _additionalShield: 0
+  _slotType: 2

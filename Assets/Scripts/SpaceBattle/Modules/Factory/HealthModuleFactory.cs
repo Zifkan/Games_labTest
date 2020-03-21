@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SpaceBattle.Enums;
 using SpaceBattle.SpaceShips;
 using SpaceBattle.Utils;
 using UnityEditor;
@@ -8,13 +9,20 @@ namespace SpaceBattle.Modules.Factory
 {
     public class HealthModuleFactory : ScriptableObject, IShipModuleFactory
     {
-        [SerializeField] private float _additionalHealth;
+        [SerializeField] 
+        private float _additionalHealth;
 
+        [SerializeField] 
+        private SlotType _slotType;
+
+        [SerializeField] 
+        private GameObject _model;
+        
         private readonly Queue<IShipModule> _pool = new Queue<IShipModule>();
 
         public IShipModule GetOrCreateModule()
         {
-            return _pool.Count > 0 ? _pool.Dequeue() : new HealthModule(this, _additionalHealth);
+            return _pool.Count > 0 ? _pool.Dequeue() : new HealthModule(this, _additionalHealth,_slotType, _model);
         }
 
         public void ReleaseModule(IShipModule module)
@@ -30,18 +38,18 @@ namespace SpaceBattle.Modules.Factory
             ScriptableObjectUtility.CreateAsset<HealthModuleFactory>();
         }
 
-
         private class HealthModule : BaseShipModule
         {
             private readonly float _additionalHealth;
 
-            public HealthModule(HealthModuleFactory factory, float additionalHealth)
+            public HealthModule(HealthModuleFactory factory, float additionalHealth, SlotType slotType, GameObject model)
             {
                 _factory = factory;
                 _additionalHealth = additionalHealth;
+                _slotType = slotType;
+                _model = model;
             }
-
-
+            
             public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
             {
                 ship.SetHealth(_additionalHealth);

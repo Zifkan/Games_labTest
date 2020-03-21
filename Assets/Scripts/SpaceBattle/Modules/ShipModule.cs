@@ -11,14 +11,14 @@ namespace SpaceBattle.Modules
         protected SlotType _slotType;
         protected IShipModuleFactory _factory;
         
-        public GameObject Mesh;
+        protected GameObject _model;
         
         protected void AttachModuleToSlot(Transform slotTransform)
         {
-            if (Mesh == null) return;
-            Mesh.transform.parent.SetParent(slotTransform);
-            Mesh.transform.localPosition = Vector3.zero;
-            Mesh.transform.rotation = quaternion.identity;
+            if (_model == null) return;
+            _model.transform.parent.SetParent(slotTransform);
+            _model.transform.localPosition = Vector3.zero;
+            _model.transform.rotation = quaternion.identity;
         }
 
         public SlotType SlotType => _slotType;
