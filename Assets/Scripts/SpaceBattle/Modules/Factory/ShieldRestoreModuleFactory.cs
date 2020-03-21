@@ -51,13 +51,13 @@ namespace SpaceBattle.Modules.Factory
 
             public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
             {
-                ship.SetHealth(_shieldRestorePercent);
+                ship.SetShieldRestoreFactor(_shieldRestorePercent);
                 AttachModuleToSlot(slot.TransformPlace);
             }
 
             public override void OnRemovedFromShip(BaseSpaceShip ship)
             {
-                ship.SetHealth(-_shieldRestorePercent);
+                ship.SetShieldRestoreFactor(-_shieldRestorePercent);
             }
         }
     }

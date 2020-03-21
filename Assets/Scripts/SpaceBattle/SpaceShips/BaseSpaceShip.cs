@@ -21,9 +21,7 @@ namespace SpaceBattle.SpaceShips
 
         [SerializeField] 
         private List<Slot> _slots;
-        
-        private readonly Dictionary<SlotType,List<Slot>> _slotsCollection = new Dictionary<SlotType, List<Slot>>();
-        
+
         private float _maxHealth;
         private float _maxShield;
         private float _maxShieldRestorePerSec;
@@ -31,10 +29,15 @@ namespace SpaceBattle.SpaceShips
         private float _currentHealth;
         private float _currentShield;
         private float _currentShieldRestorePerSec;
+        private float _coolDownFactor;
+        private float _shieldRestoreFactorPercent;
         
-        
+        private readonly Dictionary<SlotType,List<Slot>> _slotsCollection = new Dictionary<SlotType, List<Slot>>();
         private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
         
+        public float CoolDownFactorPercent => _coolDownFactor;
+        public float ShieldRestoreFactorPercent => _shieldRestoreFactorPercent;
+
         public Dictionary<SlotType, List<Slot>> SlotsCollection => _slotsCollection;
         
         
@@ -48,11 +51,18 @@ namespace SpaceBattle.SpaceShips
             _maxShield =_shieldBase + value;
         }
         
-        public void SetShieldRestorePerSec(float value)
-        {
-            _maxShieldRestorePerSec =_shieldRestorePerSecBase + value;
-        }
 
+        public void SetWeaponCoolDownFactor(float value)
+        {
+            _coolDownFactor += value;
+        }
+        
+        public void SetShieldRestoreFactor(float value)
+        {
+            _shieldRestoreFactorPercent += value;
+        }
+        
+        
         public bool AddModule(IShipModule module)
         {
             var slots = _slotsCollection[module.SlotType];
@@ -91,6 +101,7 @@ namespace SpaceBattle.SpaceShips
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
             _maxShieldRestorePerSec = _shieldRestorePerSecBase;
+            _currentHealth = _maxHealth;
         }
 
         private void Update()
@@ -116,6 +127,7 @@ namespace SpaceBattle.SpaceShips
 
         private void ShieldRestore()
         {
+            //TODO: добавить процентный от модуля
             _currentShield = Mathf.Clamp(_currentShield+_currentShieldRestorePerSec*Time.deltaTime, 0, _maxShield);
         }
 

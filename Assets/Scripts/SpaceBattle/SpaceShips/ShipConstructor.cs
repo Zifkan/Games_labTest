@@ -31,6 +31,11 @@ namespace SpaceBattle.SpaceShips
             _shipMenu = _selectShipMenu;
             _availableModules = Resources.LoadAll<ScriptableObject>("SpaceBattle/Modules/").Select(o => (IShipModuleFactory)o).ToList();
             
+            SetShips();
+        }
+
+        private void SetShips()
+        {
             var shipResources = Resources.LoadAll<BaseSpaceShip>("SpaceBattle/Ships/");
 
             for (int i = 0; i < shipResources.Length; i++)
@@ -43,14 +48,22 @@ namespace SpaceBattle.SpaceShips
         private void Start()
         {
             _shipMenu.SetModulesCollection(_availableModules);
+            
+            _shipMenu.SetShipButtons(_ships);
         }
 
         private void OnEnable()
         {
-            _shipMenu.SetModuleEvent+= OnSetModule;
-            _shipMenu.DetachModuleEvent+=OnDetachModule;
+            _shipMenu.SetModuleEvent += OnSetModule;
+            _shipMenu.DetachModuleEvent += OnDetachModule;
+            _shipMenu.SelectShipEvent += OnSelectShip;
         }
-        
+
+        private void OnSelectShip(object sender, int index)
+        {
+            _currentShip = _ships[index];
+        }
+
         private void OnDisable()
         {
             _shipMenu.SetModuleEvent -= OnSetModule;

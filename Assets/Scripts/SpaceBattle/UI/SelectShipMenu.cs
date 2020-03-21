@@ -12,6 +12,7 @@ namespace SpaceBattle.UI
     {
         public event EventHandler<ButtonModuleEventArgs> SetModuleEvent;
         public event EventHandler<ButtonSlotEventArgs> DetachModuleEvent;
+        public event EventHandler<int> SelectShipEvent;
 
         [SerializeField] 
         private CustomButton _button;
@@ -20,11 +21,11 @@ namespace SpaceBattle.UI
         private GameObject _modulesPanelCatalog;
         [SerializeField] 
         private GameObject _usedModulesPanel;
-  
-        private ObjectPool<CustomButton> _buttonsPool;
+        [SerializeField] 
+        private GameObject _shipsPanel;
 
-        [SerializeField]
-        private List<CustomButton> _usedSlotsButtons = new List<CustomButton>();
+        private ObjectPool<CustomButton> _buttonsPool;
+        private readonly List<CustomButton> _usedSlotsButtons = new List<CustomButton>();
         
         public void SetModulesCollection(List<IShipModuleFactory> modules)
         {
@@ -49,6 +50,17 @@ namespace SpaceBattle.UI
             }
         }
 
+        public void SetShipButtons(List<BaseSpaceShip> ships)
+        {
+            for (int i = 0; i < ships.Count; i++)
+            {
+                var btn = _buttonsPool.Get();
+                btn.transform.SetParent(_shipsPanel.transform);
+                var ship = ships[i];
+                var index = i;
+                btn.Init(ship.ToString(), () => OnSelectShip(index));
+            }
+        }
 
         private void Awake()
         {
@@ -76,5 +88,9 @@ namespace SpaceBattle.UI
             DetachModuleEvent?.Invoke(this, new ButtonSlotEventArgs(slot));
         }
 
+        protected virtual void OnSelectShip(int i)
+        {
+            SelectShipEvent?.Invoke(this, i);
+        }
     }
 }

@@ -45,8 +45,9 @@ namespace SpaceBattle.Modules.Factory
             private float _damage;
             private float _lastShootTime;
             private readonly float _coolDown;
-
-            public bool IsShootReady => Time.time - _lastShootTime >= _coolDown;
+            private BaseSpaceShip _ship;
+            
+            public bool IsShootReady => Time.time - _lastShootTime >= _coolDown - _coolDown*_ship.CoolDownFactorPercent;
             
             public Weapon(WeaponModuleFactory factory, float coolDown, float damage, SlotType slotType, GameObject model)
             {
@@ -59,6 +60,7 @@ namespace SpaceBattle.Modules.Factory
 
             public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
             {
+                _ship = ship;
                 AttachModuleToSlot(slot.TransformPlace);
                 ship.AddWeapon(this);
             }
