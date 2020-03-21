@@ -6,11 +6,10 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public abstract class BaseShipModule : IShipModule 
+    public abstract class BaseShipModule : IShipModule
     {
         protected SlotType _slotType;
         protected IShipModuleFactory _factory;
-        
         protected GameObject _model;
         
         protected void AttachModuleToSlot(Transform slotTransform)
@@ -21,6 +20,8 @@ namespace SpaceBattle.Modules
             _model.transform.rotation = quaternion.identity;
         }
 
+        public string ModuleName { get; set; }
+        
         public SlotType SlotType => _slotType;
 
         public abstract void OnAttachedToShip(BaseSpaceShip ship, Slot slot);
@@ -28,6 +29,7 @@ namespace SpaceBattle.Modules
         public abstract void OnRemovedFromShip(BaseSpaceShip ship);
         
         public bool IsValid => _factory != null;
+
         public void Release()
         {
             if(_factory == null) return;

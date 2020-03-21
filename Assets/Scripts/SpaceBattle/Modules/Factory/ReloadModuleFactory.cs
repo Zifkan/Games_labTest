@@ -8,7 +8,9 @@ using UnityEngine;
 namespace SpaceBattle.Modules.Factory
 {
     public class ReloadModuleFactory : ScriptableObject, IShipModuleFactory
-    {
+    { 
+        [SerializeField] private string _moduleName;
+
         [SerializeField] private float _reloadReduceRatio;
 
         [SerializeField] private SlotType _slotType;
@@ -19,7 +21,12 @@ namespace SpaceBattle.Modules.Factory
 
         public IShipModule GetOrCreateModule()
         {
-            return _pool.Count > 0 ? _pool.Dequeue() : new ReloadModule(this, _reloadReduceRatio, _slotType, _model);
+            if (_pool.Count > 0)
+            {
+                return _pool.Dequeue();
+            }
+            
+            return new ReloadModule(this, _reloadReduceRatio, _slotType, _model){ModuleName = _moduleName};
         }
 
         public void ReleaseModule(IShipModule module)

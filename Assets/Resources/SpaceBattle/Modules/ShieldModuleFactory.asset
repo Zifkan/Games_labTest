@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c3b883274647dbb374f600b98875d9, type: 3}
   m_Name: ShieldModuleFactory
   m_EditorClassIdentifier: 
+  _moduleName: ShieldModuleFactory
   _additionalShield: 0
   _slotType: 2
+  _model: {fileID: 0}

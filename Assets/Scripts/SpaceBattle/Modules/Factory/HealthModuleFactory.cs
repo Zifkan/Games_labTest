@@ -10,6 +10,9 @@ namespace SpaceBattle.Modules.Factory
     public class HealthModuleFactory : ScriptableObject, IShipModuleFactory
     {
         [SerializeField] 
+        private string _moduleName;
+        
+        [SerializeField] 
         private float _additionalHealth;
 
         [SerializeField] 
@@ -22,7 +25,12 @@ namespace SpaceBattle.Modules.Factory
 
         public IShipModule GetOrCreateModule()
         {
-            return _pool.Count > 0 ? _pool.Dequeue() : new HealthModule(this, _additionalHealth,_slotType, _model);
+            if (_pool.Count > 0)
+            {
+                return _pool.Dequeue();
+            }
+
+            return new HealthModule(this, _additionalHealth, _slotType, _model){ModuleName = _moduleName};
         }
 
         public void ReleaseModule(IShipModule module)

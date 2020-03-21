@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8beda6259dcb4db2a7548192b0e65404, type: 3}
   m_Name: ShieldRestoreModule
   m_EditorClassIdentifier: 
-  _availableCount: 10
-  _slotType: 2
-  Mesh: {fileID: 0}
+  _moduleName: ShieldRestoreModule
   _shieldRestorePercent: 0.2
+  _slotType: 2
+  _model: {fileID: 0}

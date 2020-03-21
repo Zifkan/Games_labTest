@@ -781,12 +781,12 @@ GameObject:
   - component: {fileID: 953160392}
   - component: {fileID: 953160393}
   m_Layer: 0
-  m_Name: WeaponsPanel
+  m_Name: UsedSlotsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &953160392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1032,7 +1032,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 2024262680894120042, guid: 582e10d250920e144ad7e540e02cef2c, type: 3}
   _modulesPanelCatalog: {fileID: 67117976}
-  _usedModulesPanel: {fileID: 0}
+  _usedModulesPanel: {fileID: 953160391}
+  _usedSlotsButtons: []
 --- !u!224 &1185637415
 RectTransform:
   m_ObjectHideFlags: 0

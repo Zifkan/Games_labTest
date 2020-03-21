@@ -5,6 +5,7 @@ namespace SpaceBattle.Modules
 {
     public interface IShipModule
     {
+        string ModuleName { get; }
         SlotType SlotType { get; }
         void OnAttachedToShip(BaseSpaceShip ship,Slot slot);
         void OnRemovedFromShip(BaseSpaceShip ship);

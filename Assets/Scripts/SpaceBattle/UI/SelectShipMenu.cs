@@ -21,9 +21,11 @@ namespace SpaceBattle.UI
         [SerializeField] 
         private GameObject _usedModulesPanel;
   
-        private ShipConstructor _shipConstructor;
         private ObjectPool<CustomButton> _buttonsPool;
 
+        [SerializeField]
+        private List<CustomButton> _usedSlotsButtons = new List<CustomButton>();
+        
         public void SetModulesCollection(List<IShipModuleFactory> modules)
         {
             for (int i = 0; i < modules.Count; i++)
@@ -39,17 +41,17 @@ namespace SpaceBattle.UI
         {
             for (int i = 0; i < slots.Count; i++)
             {
-                var btn = _buttonsPool.Get();
+                var btn = _usedSlotsButtons.Count > i ? _usedSlotsButtons[i] : _buttonsPool.Get();
+
                 btn.transform.SetParent(_usedModulesPanel.transform);
                 var slot = slots[i];
-                btn.Init(slot.ToString(), () => OnModuleDetachPressed(slot));
+                btn.Init(slot.Module.ModuleName, () => OnModuleDetachPressed(slot));
             }
         }
 
 
         private void Awake()
         {
-            _shipConstructor = GetComponent<ShipConstructor>();
             _buttonsPool = new ObjectPool<CustomButton>(_button, 10, transform);
         }
 

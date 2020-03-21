@@ -9,6 +9,8 @@ namespace SpaceBattle.Modules.Factory
 {
     public class ShieldRestoreModuleFactory : ScriptableObject, IShipModuleFactory
     {
+        [SerializeField] private string _moduleName;
+        
         [SerializeField] [Range(0, 1)] private float _shieldRestorePercent = 0.2f;
 
         [SerializeField] private SlotType _slotType;
@@ -19,7 +21,7 @@ namespace SpaceBattle.Modules.Factory
 
         public IShipModule GetOrCreateModule()
         {
-            return _pool.Count > 0 ? _pool.Dequeue() : new ShieldRestoreModule(this, _shieldRestorePercent, _slotType,_model);
+            return _pool.Count > 0 ? _pool.Dequeue() : new ShieldRestoreModule(this, _shieldRestorePercent, _slotType,_model){ModuleName = _moduleName};
         }
 
         public void ReleaseModule(IShipModule module)

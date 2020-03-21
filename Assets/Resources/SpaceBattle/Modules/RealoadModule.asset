@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30332de27f564b90b069a19aa469989a, type: 3}
   m_Name: RealoadModule
   m_EditorClassIdentifier: 
-  _availableCount: 10
+  _moduleName: RealoadModule
+  _reloadReduceRatio: 0
   _slotType: 2
-  Mesh: {fileID: 0}
+  _model: {fileID: 0}

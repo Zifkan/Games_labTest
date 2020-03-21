@@ -9,6 +9,8 @@ namespace SpaceBattle.Modules.Factory
 {
     public class WeaponModuleFactory : ScriptableObject, IShipModuleFactory
     {
+        [SerializeField] private string _moduleName;
+        
         [SerializeField] private float _coolDown;
 
         [SerializeField] private float _damage;
@@ -22,7 +24,7 @@ namespace SpaceBattle.Modules.Factory
 
         public IShipModule GetOrCreateModule()
         {
-            return _pool.Count > 0 ? _pool.Dequeue() : new Weapon(this, _coolDown, _damage, _slotType, _model);
+            return _pool.Count > 0 ? _pool.Dequeue() : new Weapon(this, _coolDown, _damage, _slotType, _model){ModuleName = _moduleName};
         }
 
         public void ReleaseModule(IShipModule module)
