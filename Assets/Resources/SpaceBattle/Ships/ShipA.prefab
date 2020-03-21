@@ -149,5 +149,3 @@ MonoBehaviour:
     _transformPlace: {fileID: 0}
   - _slotType: 1
     _transformPlace: {fileID: 0}
-  - _slotType: -1
-    _transformPlace: {fileID: 0}

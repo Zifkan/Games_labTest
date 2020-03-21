@@ -11,9 +11,6 @@ namespace SpaceBattle.SpaceShips
     public class ShipConstructor : MonoBehaviour
     {
         [SerializeField] 
-        private BaseSpaceShip _currentShip;
-
-        [SerializeField] 
         private SelectShipMenu _selectShipMenu;
 
         [SerializeField] 
@@ -21,8 +18,8 @@ namespace SpaceBattle.SpaceShips
         
         private readonly List<BaseSpaceShip> _ships = new List<BaseSpaceShip>();
         private List<IShipModuleFactory> _availableModules;
-        
-        public BaseSpaceShip CurrentShip => _currentShip;
+
+        private BaseSpaceShip _currentShip;
         
         private IShipMenu _shipMenu;
         
@@ -50,6 +47,8 @@ namespace SpaceBattle.SpaceShips
             _shipMenu.SetModulesCollection(_availableModules);
             
             _shipMenu.SetShipButtons(_ships);
+
+            SetCurrentShip(0);
         }
 
         private void OnEnable()
@@ -61,6 +60,11 @@ namespace SpaceBattle.SpaceShips
 
         private void OnSelectShip(object sender, int index)
         {
+            SetCurrentShip(index);
+        }
+
+        private void SetCurrentShip( int index)
+        {
             _currentShip = _ships[index];
             RefreshSlots();
         }
@@ -68,26 +72,24 @@ namespace SpaceBattle.SpaceShips
         private void OnDisable()
         {
             _shipMenu.SetModuleEvent -= OnSetModule;
-            _shipMenu.DetachModuleEvent -=OnDetachModule;
+            _shipMenu.DetachModuleEvent -= OnDetachModule;
         }
 
         private void OnDetachModule(object sender, ButtonSlotEventArgs e)
         {
-            CurrentShip.RemoveModule(e.Slot);
-            
+            _currentShip.RemoveModule(e.Slot);
             RefreshSlots();
         }
 
         private void OnSetModule(object sender, ButtonModuleEventArgs e)
         { 
-            CurrentShip.AddModule(e.ModuleFactory.GetOrCreateModule());
-
+            _currentShip.AddModule(e.ModuleFactory.GetOrCreateModule());
             RefreshSlots();
         }
 
         private void RefreshSlots()
         {
-            _shipMenu.Refresh(CurrentShip.SlotsCollection);
+            _shipMenu.Refresh(_currentShip.SlotsCollection);
         }
     }
 }

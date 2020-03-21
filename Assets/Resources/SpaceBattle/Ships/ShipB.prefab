@@ -141,4 +141,14 @@ MonoBehaviour:
   _healthBase: 60
   _shieldBase: 120
   _shieldRestorePerSecBase: 1
-  _slots: []
+  _slots:
+  - _slotType: 1
+    _transformPlace: {fileID: 0}
+  - _slotType: 1
+    _transformPlace: {fileID: 0}
+  - _slotType: 2
+    _transformPlace: {fileID: 0}
+  - _slotType: 2
+    _transformPlace: {fileID: 0}
+  - _slotType: 2
+    _transformPlace: {fileID: 0}

@@ -8,7 +8,6 @@ namespace SpaceBattle.Enums
         None = 0,
         Weapon = 1,
         Module = 2,
-        Jopa = 4,
-        Govno = 8,
+        Combined = 4,
     }
 }

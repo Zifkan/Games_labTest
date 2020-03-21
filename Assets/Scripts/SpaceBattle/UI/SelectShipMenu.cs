@@ -40,30 +40,24 @@ namespace SpaceBattle.UI
 
         public void Refresh(List<Slot> slots)
         {
-            var btnCount = _usedSlotsButtons.Count;
-
+            for (int i = 0; i <  _usedSlotsButtons.Count; i++)
+            {
+                var btn = _usedSlotsButtons[i];
+                _buttonsPool.ReturnToPool(btn);
+            }
+            _usedSlotsButtons.Clear();
+            
             for (int i = 0; i < slots.Count; i++)
             {
-                CustomButton btn;
-                if (i >= btnCount)
-                {
-                    btn = _buttonsPool.Get();
-                    _usedSlotsButtons.Add(btn);
-                }
-                else
-                {
-                    btn = _usedSlotsButtons[i];
-                    _usedSlotsButtons.Add(btn);
-                }
-
-                var slot = slots[i];
+                var btn = _buttonsPool.Get();
                 btn.transform.SetParent(_usedModulesPanel.transform);
 
                 string btnName;
 
+                var slot = slots[i];
                 if (slot.Module == null)
                 {
-                    btnName =slot.Type>0?slot.Type.ToString():"Universal";
+                    btnName = slot.Type>0?slot.Type.ToString():"Universal";
                 }
                 else
                 {
@@ -71,6 +65,7 @@ namespace SpaceBattle.UI
                 }
 
                 btn.Init(btnName, () => OnModuleDetachPressed(slot));
+                _usedSlotsButtons.Add(btn);
             }
         }
 
@@ -98,9 +93,9 @@ namespace SpaceBattle.UI
 
         private void OnModuleDetachPressed(Slot slot)
         {
-            OnDetachModule(slot);
+            if(!slot.IsFree)
+                OnDetachModule(slot);
         }
-
 
         protected virtual void OnSetModule(IShipModuleFactory moduleFactory)
         {
