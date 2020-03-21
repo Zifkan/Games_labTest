@@ -35,9 +35,8 @@ namespace SpaceBattle.SpaceShips
         private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
         
         public float CoolDownFactorPercent => _coolDownFactor;
-        public Dictionary<SlotType, List<Slot>> SlotsCollection => _slotsCollection;
-        
-        
+        public List<Slot> SlotsCollection => _slots;
+
         public void SetHealth(float value)
         {
             _maxHealth = _healthBase + value;

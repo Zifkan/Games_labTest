@@ -13,11 +13,14 @@ namespace SpaceBattle.UI
 
         [SerializeField] 
         private Button _button;
+
+        private UnityAction _action;
         
         public void Init(string text,UnityAction action)
         {
+            _action = action;
             _text.text = text;
-            _button.onClick.AddListener(action);
+            _button.onClick.AddListener(_action);
         }
 
         public void PrepareToUse()
@@ -27,6 +30,7 @@ namespace SpaceBattle.UI
 
         public void ReturnToPool()
         {
+            
         }
     }
 }

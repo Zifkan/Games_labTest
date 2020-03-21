@@ -62,6 +62,7 @@ namespace SpaceBattle.SpaceShips
         private void OnSelectShip(object sender, int index)
         {
             _currentShip = _ships[index];
+            RefreshSlots();
         }
 
         private void OnDisable()
@@ -77,14 +78,14 @@ namespace SpaceBattle.SpaceShips
 
         private void OnSetModule(object sender, ButtonModuleEventArgs e)
         { 
-            CurrentShip.AddModule( e.ModuleFactory.GetOrCreateModule());
+            CurrentShip.AddModule(e.ModuleFactory.GetOrCreateModule());
 
             RefreshSlots();
         }
 
         private void RefreshSlots()
         {
-            _shipMenu.SetSlotsCollection(CurrentShip.SlotsCollection.Values.SelectMany(list => list.Where(slot => !slot.IsFree)).ToList());
+            _shipMenu.Refresh(CurrentShip.SlotsCollection);
         }
     }
 }

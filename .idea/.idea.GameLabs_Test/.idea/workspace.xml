@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,48 +21,55 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/7c/fcb6fe08/JobHandle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/60/185665d5/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/9d/3fbea186/IPartition`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/92/ca3da8a1/OrderedPartition`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GeometryTest/PerlinNoiseJob.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/IPoolable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GeometryTest/FlagBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/39/f91b96cc/NativeArrayOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/4c/eb30267f/OrderedEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Enums/SlotType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/ba/a8b0a699/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/c0/e3592da0/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/9a/7c944518/EnumerableSorter`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/99/b1e84b1d/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/d7/906ab45e/UnsafeUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/5c/a3358ede/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/c7/49987bcc/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C074160-DD1A-4D91-9B45-B6E4C27A3BAC/e4/3884ee5f/Module.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ShipPlacer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/d9/2072fc00/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../ocean-simulation/Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/61/79edf22f/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ScriptableObjectUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/02/d876f22d/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/7c/fcb6fe08/JobHandle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/IPoolable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GeometryTest/FlagBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/39/f91b96cc/NativeArrayOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/c0/e3592da0/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/d7/906ab45e/UnsafeUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ShipPlacer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/b2/cbfbcdca/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/d9/2072fc00/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/61/79edf22f/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -76,7 +86,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/Button.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Enums/SlotType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" />
@@ -96,14 +105,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ShipPlacer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
       </list>
     </option>
   </component>
@@ -173,74 +183,74 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1240" height="438" key="DebuggerActiveHint" timestamp="1584704983226">
+    <state width="1240" height="438" key="DebuggerActiveHint" timestamp="1584820228043">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1240" height="438" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1584704983226" />
-    <state width="1877" height="148" key="GridCell.Tab.0.bottom" timestamp="1584745160894">
+    <state width="1240" height="438" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1584820228043" />
+    <state width="1877" height="146" key="GridCell.Tab.0.bottom" timestamp="1584820157676">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.0.center" timestamp="1584745160893">
+    <state width="1877" height="146" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157676" />
+    <state width="1877" height="146" key="GridCell.Tab.0.center" timestamp="1584820157676">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160893" />
-    <state width="1877" height="148" key="GridCell.Tab.0.left" timestamp="1584745160893">
+    <state width="1877" height="146" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157676" />
+    <state width="1877" height="146" key="GridCell.Tab.0.left" timestamp="1584820157676">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160893" />
-    <state width="1877" height="148" key="GridCell.Tab.0.right" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157676" />
+    <state width="1877" height="146" key="GridCell.Tab.0.right" timestamp="1584820157676">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.1.bottom" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157676" />
+    <state width="1877" height="146" key="GridCell.Tab.1.bottom" timestamp="1584820169764">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.1.center" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584820169764" />
+    <state width="1877" height="146" key="GridCell.Tab.1.center" timestamp="1584820169764">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.1.left" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584820169764" />
+    <state width="1877" height="146" key="GridCell.Tab.1.left" timestamp="1584820169764">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.1.right" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584820169764" />
+    <state width="1877" height="146" key="GridCell.Tab.1.right" timestamp="1584820169764">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.2.bottom" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584820169764" />
+    <state width="1877" height="146" key="GridCell.Tab.2.bottom" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.2.center" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.2.center" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.2.left" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.2.left" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.2.right" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.2.right" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.3.bottom" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.3.bottom" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.3.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.3.center" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.3.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.3.center" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.3.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.3.left" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.3.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.3.left" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.3.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
-    <state width="1877" height="148" key="GridCell.Tab.3.right" timestamp="1584745160894">
+    <state width="1877" height="146" key="GridCell.Tab.3.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
+    <state width="1877" height="146" key="GridCell.Tab.3.right" timestamp="1584820157601">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="148" key="GridCell.Tab.3.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584745160894" />
+    <state width="1877" height="146" key="GridCell.Tab.3.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584820157601" />
     <state x="770" y="231" key="RiderGenerateDialog" timestamp="1584798629644">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -253,5 +263,50 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="178" width="672" height="676" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584797090425" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs</url>
+          <line>80</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" initialLine="80">
+            <startOffsets>
+              <option value="2354" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2413" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs</url>
+          <line>42</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" initialLine="42">
+            <startOffsets>
+              <option value="1431" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1468" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs</url>
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" initialLine="54">
+            <startOffsets>
+              <option value="1881" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1920" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -38,15 +38,39 @@ namespace SpaceBattle.UI
             }
         }
 
-        public void SetSlotsCollection(List<Slot> slots)
+        public void Refresh(List<Slot> slots)
         {
+            var btnCount = _usedSlotsButtons.Count;
+
             for (int i = 0; i < slots.Count; i++)
             {
-                var btn = _usedSlotsButtons.Count > i ? _usedSlotsButtons[i] : _buttonsPool.Get();
+                CustomButton btn;
+                if (i >= btnCount)
+                {
+                    btn = _buttonsPool.Get();
+                    _usedSlotsButtons.Add(btn);
+                }
+                else
+                {
+                    btn = _usedSlotsButtons[i];
+                    _usedSlotsButtons.Add(btn);
+                }
 
-                btn.transform.SetParent(_usedModulesPanel.transform);
                 var slot = slots[i];
-                btn.Init(slot.Module.ModuleName, () => OnModuleDetachPressed(slot));
+                btn.transform.SetParent(_usedModulesPanel.transform);
+
+                string btnName;
+
+                if (slot.Module == null)
+                {
+                    btnName =slot.Type>0?slot.Type.ToString():"Universal";
+                }
+                else
+                {
+                    btnName = slot.Module.ModuleName;
+                }
+
+                btn.Init(btnName, () => OnModuleDetachPressed(slot));
             }
         }
 

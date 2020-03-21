@@ -13,7 +13,7 @@ namespace SpaceBattle.UI
         event EventHandler<int> SelectShipEvent;
 
         void SetModulesCollection(List<IShipModuleFactory> modules);
-        void SetSlotsCollection(List<Slot> modules);
+        void Refresh(List<Slot> modules);
         void SetShipButtons(List<BaseSpaceShip> ships);
     }
 }
