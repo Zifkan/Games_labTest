@@ -75,9 +75,10 @@ namespace SpaceBattle.SpaceShips
             return false;
         }
 
-        public void RemoveModule(IShipModule module)
+        public void RemoveModule(Slot slot)
         {
-            module.OnRemovedFromShip(this);
+            slot.Module.OnRemovedFromShip(this);
+            slot.SetModule(null);
         }
 
         public void AddWeapon(WeaponModuleFactory.Weapon weapon)

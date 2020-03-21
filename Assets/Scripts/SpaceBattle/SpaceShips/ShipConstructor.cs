@@ -73,7 +73,9 @@ namespace SpaceBattle.SpaceShips
 
         private void OnDetachModule(object sender, ButtonSlotEventArgs e)
         {
-            CurrentShip.RemoveModule(e.Slot.Module);
+            CurrentShip.RemoveModule(e.Slot);
+            
+            RefreshSlots();
         }
 
         private void OnSetModule(object sender, ButtonModuleEventArgs e)

@@ -1,4 +1,3 @@
-using System;
 using SpaceBattle.Utils;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,6 +17,9 @@ namespace SpaceBattle.UI
         
         public void Init(string text,UnityAction action)
         {
+            if(_action != null)
+                _button.onClick.RemoveListener(_action);
+            
             _action = action;
             _text.text = text;
             _button.onClick.AddListener(_action);
