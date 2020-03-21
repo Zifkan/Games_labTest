@@ -33,7 +33,7 @@ namespace SpaceBattle.Modules
         }
     }
     
-    public class ShieldRestoreModule :BaseShipModule<ShieldRestoreModuleFactory>
+    public class ShieldRestoreModule :BaseShipModule
     {
         private float _shieldRestorePercent;
 

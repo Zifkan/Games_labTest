@@ -32,7 +32,7 @@ namespace SpaceBattle.Modules.Factory
         }
     }
     
-    public class ReloadModule : BaseShipModule<ReloadModuleFactory>
+    public class ReloadModule : BaseShipModule
     {
         private float _reloadReduceRatio;
         public ReloadModule(ReloadModuleFactory factory, float reloadReduceRatio)

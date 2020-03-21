@@ -34,7 +34,7 @@ namespace SpaceBattle.Modules.Factory
             ScriptableObjectUtility.CreateAsset<WeaponModuleFactory> ();
         }
     }
-    public class Weapon :BaseShipModule<WeaponModuleFactory>
+    public class Weapon :BaseShipModule
     {
         private float _coolDown;
         private float _damage;

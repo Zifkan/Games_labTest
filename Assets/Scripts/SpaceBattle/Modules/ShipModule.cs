@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace SpaceBattle.Modules
 {
-    public abstract class BaseShipModule<T> : IShipModule where T : IShipModuleFactory
+    public abstract class BaseShipModule : IShipModule 
     {
         protected SlotType _slotType;
-        protected T _factory;
+        protected IShipModuleFactory _factory;
         
         public GameObject Mesh;
         
@@ -33,7 +33,7 @@ namespace SpaceBattle.Modules
             if(_factory == null) return;
             
             _factory.ReleaseModule(this);
-            _factory = default(T);
+            _factory = null;
         }
     }
     

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SpaceBattle.CustomEventArgs;
 using SpaceBattle.Modules;
+using SpaceBattle.Modules.Factory;
 using SpaceBattle.UI;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ namespace SpaceBattle.SpaceShips
         private SelectShipMenu _selectShipMenu;
         
         
-        private List<IShipModule> _availableModules;
+        private List<IShipModuleFactory> _availableModules;
         
         public BaseSpaceShip CurrentShip => _currentShip;
         
@@ -25,10 +26,8 @@ namespace SpaceBattle.SpaceShips
         private void Awake()
         {
             _shipMenu = _selectShipMenu;
-            
-            _availableModules = Resources.LoadAll<BaseShipModule>("SpaceBattle/Modules/").Select(module => (IShipModule)module).ToList();
-            
-         
+            _availableModules = Resources.LoadAll<ScriptableObject>("SpaceBattle/Modules/").Select(o => (IShipModuleFactory)o).ToList();
+           // _availableModules[0].GetOrCreateModule()
         }
 
         private void Start()
@@ -54,10 +53,8 @@ namespace SpaceBattle.SpaceShips
         }
 
         private void OnSetModule(object sender, ButtonModuleEventArgs e)
-        {
-            var instance = Instantiate((BaseShipModule)e.Module);
-            
-            CurrentShip.AddModule(instance);
+        { 
+            CurrentShip.AddModule( e.ModuleFactory.GetOrCreateModule());
         }
 
       

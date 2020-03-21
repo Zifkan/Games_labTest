@@ -1,5 +1,6 @@
 using System;
 using SpaceBattle.Modules;
+using SpaceBattle.Modules.Factory;
 using SpaceBattle.SpaceShips;
 
 namespace SpaceBattle.CustomEventArgs
@@ -18,13 +19,13 @@ namespace SpaceBattle.CustomEventArgs
     
     public class ButtonModuleEventArgs: EventArgs
     {
-        private readonly IShipModule _module;
+        private readonly IShipModuleFactory _moduleFactory;
 
-        public IShipModule Module => _module;
+        public IShipModuleFactory ModuleFactory => _moduleFactory;
         
-        public ButtonModuleEventArgs(IShipModule module)
+        public ButtonModuleEventArgs(IShipModuleFactory module)
         {
-            _module = module;
+            _moduleFactory = module;
         }
     }
 }

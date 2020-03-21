@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldModuleFactory.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldModuleFactory.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldModule.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/ShieldModule.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,25 +89,25 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/EventArgs/ButtonEventArgs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ModuleFactoryScriptableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ModuleFactoryScriptableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldRestoreModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/CustomEventArgs/ButtonEventArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
       </list>
     </option>
   </component>

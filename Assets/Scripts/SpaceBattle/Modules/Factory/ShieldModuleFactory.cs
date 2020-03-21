@@ -32,7 +32,7 @@ namespace SpaceBattle.Modules.Factory
         }
     }
 
-    public class ShieldModule : BaseShipModule<ShieldModuleFactory>
+    public class ShieldModule : BaseShipModule
     {
         private float _additionalShield;
         

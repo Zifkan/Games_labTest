@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using SpaceBattle.CustomEventArgs;
-using SpaceBattle.Modules;
+using SpaceBattle.Modules.Factory;
 using SpaceBattle.SpaceShips;
 using SpaceBattle.Utils;
 using UnityEngine;
@@ -12,6 +12,7 @@ namespace SpaceBattle.UI
     {
         public event EventHandler<ButtonModuleEventArgs> SetModuleEvent;
         public event EventHandler<ButtonSlotEventArgs> DetachModuleEvent;
+       
 
         [SerializeField] 
         private CustomButton _button;
@@ -24,14 +25,14 @@ namespace SpaceBattle.UI
         private ShipConstructor _shipConstructor;
         private ObjectPool<CustomButton> _buttonsPool;
 
-        public void SetModulesCollection(List<IShipModule> modules)
+        public void SetModulesCollection(List<IShipModuleFactory> modules)
         {
             for (int i = 0; i < modules.Count; i++)
             {
                 var btn = _buttonsPool.Get();
                 btn.transform.SetParent(_modulesPanelCatalog.transform);
                 var module = modules[i];
-                btn.Init(modules[i].SlotType.ToString(), () => OnModuleButtonPressed(module));
+                btn.Init(modules[i].ToString(), () => OnModuleButtonPressed(module));
             }
         }
         
@@ -47,9 +48,9 @@ namespace SpaceBattle.UI
           
         }
 
-        private void OnModuleButtonPressed(IShipModule module)
+        private void OnModuleButtonPressed(IShipModuleFactory moduleFactory)
         {
-            OnSetModule(module);
+            OnSetModule(moduleFactory);
         }
 
         private void OnModuleDetachPressed(int index)
@@ -58,9 +59,9 @@ namespace SpaceBattle.UI
         }
 
 
-        protected virtual void OnSetModule(IShipModule module)
+        protected virtual void OnSetModule(IShipModuleFactory moduleFactory)
         {
-            SetModuleEvent?.Invoke(this, new ButtonModuleEventArgs(module));
+            SetModuleEvent?.Invoke(this, new ButtonModuleEventArgs(moduleFactory));
         }
 
         protected virtual void OnDetachModule(Slot slot)
