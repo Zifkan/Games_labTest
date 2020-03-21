@@ -34,8 +34,19 @@ namespace SpaceBattle.UI
                 btn.Init(modules[i].ToString(), () => OnModuleButtonPressed(module));
             }
         }
-        
-        
+
+        public void SetSlotsCollection(List<Slot> slots)
+        {
+            for (int i = 0; i < slots.Count; i++)
+            {
+                var btn = _buttonsPool.Get();
+                btn.transform.SetParent(_usedModulesPanel.transform);
+                var slot = slots[i];
+                btn.Init(slot.ToString(), () => OnModuleDetachPressed(slot));
+            }
+        }
+
+
         private void Awake()
         {
             _shipConstructor = GetComponent<ShipConstructor>();
@@ -47,9 +58,9 @@ namespace SpaceBattle.UI
             OnSetModule(moduleFactory);
         }
 
-        private void OnModuleDetachPressed(int index)
+        private void OnModuleDetachPressed(Slot slot)
         {
-            
+            OnDetachModule(slot);
         }
 
 

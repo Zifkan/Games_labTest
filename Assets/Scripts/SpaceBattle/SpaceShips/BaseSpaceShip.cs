@@ -23,26 +23,26 @@ namespace SpaceBattle.SpaceShips
         
         private readonly Dictionary<SlotType,List<Slot>> _slotsCollection = new Dictionary<SlotType, List<Slot>>();
         
-        private float _health;
-        private float _shield;
-        private float _shieldRestorePerSec;
+        private float _maxHealth;
+        private float _maxShield;
+        private float _maxShieldRestorePerSec;
         
         public Dictionary<SlotType, List<Slot>> SlotsCollection => _slotsCollection;
         
         
         public void SetHealth(float value)
         {
-            _health += value;
+            _maxHealth = _healthBase + value;
         }
         
         public void SetShield(float value)
         {
-            _shield += value;
+            _maxShield =_shieldBase + value;
         }
         
         public void SetShieldRestorePerSec(float value)
         {
-            _shieldRestorePerSec += value;
+            _maxShieldRestorePerSec =_shieldRestorePerSecBase + value;
         }
 
         public bool AddModule(IShipModule module)
@@ -70,9 +70,9 @@ namespace SpaceBattle.SpaceShips
         {
             SlotsInit();
             
-            _health = _healthBase;
-            _shield = _shieldBase;
-            _shieldRestorePerSec = _shieldRestorePerSecBase;
+            _maxHealth = _healthBase;
+            _maxShield = _shieldBase;
+            _maxShieldRestorePerSec = _shieldRestorePerSecBase;
         }
 
         private void SlotsInit()

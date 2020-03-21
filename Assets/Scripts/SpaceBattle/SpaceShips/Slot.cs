@@ -18,8 +18,11 @@ namespace SpaceBattle.SpaceShips
         
         public SlotType Type => _slotType;
 
-        public bool IsFree => _module == null;
+        public bool IsFree => Module == null;
         public Transform TransformPlace => _transformPlace;
+
+        public IShipModule Module => _module;
+
         public void SetModule(IShipModule module)
         {
             _module = module;

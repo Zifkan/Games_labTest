@@ -1,5 +1,4 @@
 using System;
-using SpaceBattle.Modules;
 using SpaceBattle.Modules.Factory;
 using SpaceBattle.SpaceShips;
 

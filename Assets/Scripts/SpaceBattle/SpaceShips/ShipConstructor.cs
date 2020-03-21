@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using SpaceBattle.CustomEventArgs;
-using SpaceBattle.Modules;
 using SpaceBattle.Modules.Factory;
 using SpaceBattle.UI;
 using UnityEngine;
@@ -49,18 +48,19 @@ namespace SpaceBattle.SpaceShips
 
         private void OnDetachModule(object sender, ButtonSlotEventArgs e)
         {
-            
+            CurrentShip.RemoveModule(e.Slot.Module);
         }
 
         private void OnSetModule(object sender, ButtonModuleEventArgs e)
         { 
             CurrentShip.AddModule( e.ModuleFactory.GetOrCreateModule());
+
+            RefreshSlots();
         }
 
-      
-        public void  DetachModule(int index)
+        private void RefreshSlots()
         {
-            //    CurrentShip.RemoveModule((IShipModule)module);
+            _shipMenu.SetSlotsCollection(CurrentShip.SlotsCollection.Values.SelectMany(list => list.Where(slot => !slot.IsFree)).ToList());
         }
     }
 }
