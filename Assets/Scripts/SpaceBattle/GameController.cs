@@ -48,6 +48,13 @@ namespace SpaceBattle
             {
                 _ships.Add(Instantiate(ship,new Vector3(0,0,0) , Quaternion.identity));
             }
+            
+            SceneManager.sceneLoaded+=SceneManagerOnsceneLoaded;
+        }
+
+        private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            _shipConstructor.Ships.ForEach(ship => ship.Reset());
         }
 
         public void StartFight()
@@ -64,7 +71,14 @@ namespace SpaceBattle
 
         public void EndFight()
         {
-            _shipConstructor.Ships.ForEach(ship => ship.Reset());
+            _gameStage = GameStage.ShipConstruct;
+            _sceneLoadStateInfo.ForEach(info =>
+            {
+                if (info.Stage == GameStage.ShipConstruct)
+                {
+                    SceneManager.LoadScene(info.SceneId);
+                }
+            });
         }
 
         private void Start()
@@ -75,7 +89,7 @@ namespace SpaceBattle
 
         private void Update()
         {
-            if (_gameStage == GameStage.Battle && Input.GetKeyDown(KeyCode.Escape))
+            if (_gameStage == GameStage.Battle && Input.GetKeyUp(KeyCode.Escape))
             {
                 EndFight();
             }

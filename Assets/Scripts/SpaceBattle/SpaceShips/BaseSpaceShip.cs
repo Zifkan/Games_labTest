@@ -108,6 +108,9 @@ namespace SpaceBattle.SpaceShips
                 if (!slot.IsFree)
                     slot.Module.OnAttachedToShip(this, slot);
             });
+            
+            Debug.Log($"{name}: Health = {_currentHealth}; Shield = { _currentShield}; ShieldResore = {_currentShieldRestorePerSec}; " +
+                      $"ShieldRestoreFactor = {_shieldRestoreFactorPercent}; RealodFactor = {_coolDownFactor}");
         }
 
         private void Awake()

@@ -10,9 +10,9 @@ namespace SpaceBattle.Modules.Factory
     public class ReloadModuleFactory : ScriptableObject, IShipModuleFactory
     { 
         [SerializeField] private string _moduleName;
-
-        [SerializeField] private float _reloadReduceRatio;
-
+        
+        [SerializeField] [Range(0, 1)] private float _reloadReduceRatio = 0.2f;
+        
         [SerializeField] private SlotType _slotType;
 
         [SerializeField] private GameObject _model;
