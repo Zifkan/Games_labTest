@@ -39,9 +39,7 @@ namespace SpaceBattle.Modules.Factory
 
         private class ShieldModule : BaseShipModule
         {
-            private float _additionalShield;
-
-            public float AdditionalShield => _additionalShield;
+            private readonly float _additionalShield;
 
             public ShieldModule(ShieldModuleFactory factory, float value, SlotType slotType, GameObject model)
             {
@@ -54,11 +52,12 @@ namespace SpaceBattle.Modules.Factory
             public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
             {
                 AttachModuleToSlot(slot.TransformPlace);
+                ship.SetShield(_additionalShield);
             }
 
             public override void OnRemovedFromShip(BaseSpaceShip ship)
             {
-
+                ship.SetShield(-_additionalShield);
             }
         }
     }

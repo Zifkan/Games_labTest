@@ -24,7 +24,6 @@ namespace SpaceBattle.SpaceShips
 
         private float _maxHealth;
         private float _maxShield;
-        private float _maxShieldRestorePerSec;
         
         private float _currentHealth;
         private float _currentShield;
@@ -36,8 +35,6 @@ namespace SpaceBattle.SpaceShips
         private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
         
         public float CoolDownFactorPercent => _coolDownFactor;
-        public float ShieldRestoreFactorPercent => _shieldRestoreFactorPercent;
-
         public Dictionary<SlotType, List<Slot>> SlotsCollection => _slotsCollection;
         
         
@@ -52,7 +49,7 @@ namespace SpaceBattle.SpaceShips
         }
         
 
-        public void SetWeaponCoolDownFactor(float value)
+        public void SetReloadFactor(float value)
         {
             _coolDownFactor += value;
         }
@@ -100,8 +97,9 @@ namespace SpaceBattle.SpaceShips
             
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
-            _maxShieldRestorePerSec = _shieldRestorePerSecBase;
+            
             _currentHealth = _maxHealth;
+            _currentShieldRestorePerSec = _shieldRestorePerSecBase;
         }
 
         private void Update()
@@ -127,8 +125,8 @@ namespace SpaceBattle.SpaceShips
 
         private void ShieldRestore()
         {
-            //TODO: добавить процентный от модуля
-            _currentShield = Mathf.Clamp(_currentShield+_currentShieldRestorePerSec*Time.deltaTime, 0, _maxShield);
+            var valPerTick = _currentShieldRestorePerSec * Time.deltaTime;
+            _currentShield = Mathf.Clamp(_currentShield + valPerTick + (valPerTick * _shieldRestoreFactorPercent), 0, _maxShield);
         }
 
         private void Death()
