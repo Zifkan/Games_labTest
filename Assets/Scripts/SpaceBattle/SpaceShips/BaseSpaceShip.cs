@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SpaceBattle.Enums;
 using SpaceBattle.Modules;
+using SpaceBattle.Modules.Factory;
 using UnityEngine;
 
 namespace SpaceBattle.SpaceShips
@@ -26,6 +27,8 @@ namespace SpaceBattle.SpaceShips
         private float _maxHealth;
         private float _maxShield;
         private float _maxShieldRestorePerSec;
+        
+        private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
         
         public Dictionary<SlotType, List<Slot>> SlotsCollection => _slotsCollection;
         
@@ -66,13 +69,41 @@ namespace SpaceBattle.SpaceShips
             module.OnRemovedFromShip(this);
         }
 
-        void Awake()
+        public void AddWeapon(WeaponModuleFactory.Weapon weapon)
+        {
+            _weapons.Add(weapon);
+        }
+
+        public void RemoveWeapon(WeaponModuleFactory.Weapon weapon)
+        {
+            _weapons.Remove(weapon);
+        }
+
+        private void Awake()
         {
             SlotsInit();
             
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
             _maxShieldRestorePerSec = _shieldRestorePerSecBase;
+        }
+
+        private void Update()
+        {
+            Fire();
+        }
+
+        private void Fire()
+        {
+            for (int i = 0; i < _weapons.Count; i++)
+            {
+                var weapon = _weapons[i];
+
+                if (weapon.IsShootReady)
+                {
+                    weapon.Shoot();
+                }
+            }
         }
 
         private void SlotsInit()

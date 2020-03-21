@@ -53,7 +53,7 @@ namespace SpaceBattle.Modules.Factory
 
             public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
             {
-
+                AttachModuleToSlot(slot.TransformPlace);
             }
 
             public override void OnRemovedFromShip(BaseSpaceShip ship)

@@ -40,11 +40,14 @@ namespace SpaceBattle.Modules.Factory
             ScriptableObjectUtility.CreateAsset<WeaponModuleFactory>();
         }
 
-        private class Weapon : BaseShipModule
+        public class Weapon : BaseShipModule
         {
-            private float _coolDown;
             private float _damage;
+            private float _lastShootTime;
+            private readonly float _coolDown;
 
+            public bool IsShootReady => Time.time - _lastShootTime >= _coolDown;
+            
             public Weapon(WeaponModuleFactory factory, float coolDown, float damage, SlotType slotType, GameObject model)
             {
                 _factory = factory;
@@ -56,12 +59,19 @@ namespace SpaceBattle.Modules.Factory
 
             public override void OnAttachedToShip(BaseSpaceShip ship, Slot slot)
             {
-                // Debug.Log("Attach "+ name);
+                AttachModuleToSlot(slot.TransformPlace);
+                ship.AddWeapon(this);
             }
 
             public override void OnRemovedFromShip(BaseSpaceShip ship)
             {
+                ship.RemoveWeapon(this);
+            }
 
+            public void Shoot()
+            {
+                _lastShootTime = Time.time;
+                Debug.Log("Weapon damage: "+_damage);
             }
         }
     }
