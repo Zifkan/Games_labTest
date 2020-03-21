@@ -28,6 +28,11 @@ namespace SpaceBattle.SpaceShips
         private float _maxShield;
         private float _maxShieldRestorePerSec;
         
+        private float _currentHealth;
+        private float _currentShield;
+        private float _currentShieldRestorePerSec;
+        
+        
         private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
         
         public Dictionary<SlotType, List<Slot>> SlotsCollection => _slotsCollection;
@@ -90,7 +95,10 @@ namespace SpaceBattle.SpaceShips
 
         private void Update()
         {
+            ShieldRestore();
             Fire();
+
+            Death();
         }
 
         private void Fire()
@@ -103,6 +111,19 @@ namespace SpaceBattle.SpaceShips
                 {
                     weapon.Shoot();
                 }
+            }
+        }
+
+        private void ShieldRestore()
+        {
+            _currentShield = Mathf.Clamp(_currentShield+_currentShieldRestorePerSec*Time.deltaTime, 0, _maxShield);
+        }
+
+        private void Death()
+        {
+            if (_currentHealth <= 0)
+            {
+                Debug.Log("Death");
             }
         }
 

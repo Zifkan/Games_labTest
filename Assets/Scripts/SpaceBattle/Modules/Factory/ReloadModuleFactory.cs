@@ -46,8 +46,7 @@ namespace SpaceBattle.Modules.Factory
         {
             private float _reloadReduceRatio;
 
-            public ReloadModule(ReloadModuleFactory factory, float reloadReduceRatio, SlotType slotType,
-                GameObject model)
+            public ReloadModule(ReloadModuleFactory factory, float reloadReduceRatio, SlotType slotType, GameObject model)
             {
                 _factory = factory;
                 _reloadReduceRatio = reloadReduceRatio;
