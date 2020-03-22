@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RealoadModule
   m_EditorClassIdentifier: 
   _moduleName: RealoadModule
-  _reloadReduceRatio: 0
+  _reloadReduceRatio: 20
   _slotType: 2
   _model: {fileID: 0}

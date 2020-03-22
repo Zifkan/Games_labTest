@@ -41,12 +41,13 @@ namespace SpaceBattle.SpaceShips
 
         public void SetHealth(float value)
         {
-            _maxHealth = _healthBase + value;
+            _maxHealth+=value;
+            Debug.Log($"{name}: _maxHealth = "+_maxHealth);
         }
         
         public void SetShield(float value)
         {
-            _maxShield =_shieldBase + value;
+            _maxShield += value;
         }
 
         public void SetReloadFactor(float value)
@@ -95,12 +96,8 @@ namespace SpaceBattle.SpaceShips
 
         public void Reset()
         {
-            _gameStage = GameStage.ShipConstruct;
-            
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
-            
-            _currentHealth = _maxHealth;
             _currentShieldRestorePerSec = _shieldRestorePerSecBase;
             
             _slots.ForEach(slot =>
@@ -109,14 +106,19 @@ namespace SpaceBattle.SpaceShips
                     slot.Module.OnAttachedToShip(this, slot);
             });
             
+            
+            _currentHealth = _maxHealth;
+            _currentShield = _maxShield;
+
+
             Debug.Log($"{name}: Health = {_currentHealth}; Shield = { _currentShield}; ShieldResore = {_currentShieldRestorePerSec}; " +
                       $"ShieldRestoreFactor = {_shieldRestoreFactorPercent}; RealodFactor = {_coolDownFactor}");
         }
 
         private void Awake()
         {
+            _gameStage = GameStage.ShipConstruct;
             SlotsInit();
-
             Reset();
         }
 

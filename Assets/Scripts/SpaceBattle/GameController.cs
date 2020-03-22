@@ -23,7 +23,7 @@ namespace SpaceBattle
         public int SceneId => _sceneId;
     }
     
-    public class GameController : MonoBehaviour
+    public class GameController : SingletonBehaviour<GameController> 
     {
         [SerializeField]
         private SelectShipMenu _shipMenu;
@@ -38,10 +38,12 @@ namespace SpaceBattle
         private readonly List<BaseSpaceShip> _ships = new List<BaseSpaceShip>();
         private GameStage _gameStage;
         
-        private void Awake()
+        
+        public List<BaseSpaceShip> Ships => _ships; // TODO: Possible remove 
+       
+        private void Start()
         {
             DontDestroyOnLoad(gameObject);
-            
             var shipResources = Resources.LoadAll<BaseSpaceShip>("SpaceBattle/Ships/");
             
             foreach (var ship in shipResources)
@@ -50,6 +52,9 @@ namespace SpaceBattle
             }
             
             SceneManager.sceneLoaded+=SceneManagerOnsceneLoaded;
+            
+            _gameStage = GameStage.ShipConstruct;
+            _shipConstructor.Init(_ships,_shipMenu,_placer);
         }
 
         private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -71,7 +76,7 @@ namespace SpaceBattle
 
         public void EndFight()
         {
-            _gameStage = GameStage.ShipConstruct;
+            Debug.Log("End fight");
             _sceneLoadStateInfo.ForEach(info =>
             {
                 if (info.Stage == GameStage.ShipConstruct)
@@ -81,16 +86,13 @@ namespace SpaceBattle
             });
         }
 
-        private void Start()
-        {
-            _gameStage = GameStage.ShipConstruct;
-            _shipConstructor.Init(_ships,_shipMenu,_placer);
-        }
+       
 
         private void Update()
         {
             if (_gameStage == GameStage.Battle && Input.GetKeyUp(KeyCode.Escape))
             {
+                _gameStage = GameStage.ShipConstruct;
                 EndFight();
             }
         }

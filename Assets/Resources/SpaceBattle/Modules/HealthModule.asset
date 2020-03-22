@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HealthModule
   m_EditorClassIdentifier: 
   _moduleName: HealthModule
-  _additionalHealth: 0
+  _additionalHealth: 50
   _slotType: 2
   _model: {fileID: 0}

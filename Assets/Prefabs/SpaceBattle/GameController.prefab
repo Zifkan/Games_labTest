@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 9029652924745112178}
   - component: {fileID: 983239898}
   m_Layer: 0
-  m_Name: ShipConstructor
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +77,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shipMenu: {fileID: 0}
   _placer: {fileID: 983239898}
+  _sceneLoadStateInfo:
+  - _gameStage: 1
+    _sceneId: 1
+  - _gameStage: 2
+    _sceneId: 2
 --- !u!114 &983239898
 MonoBehaviour:
   m_ObjectHideFlags: 0

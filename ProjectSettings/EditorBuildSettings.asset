@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SpaceBattle/Start.unity
+    path: Assets/Scenes/SpaceBattle/Space_Constructor.unity
     guid: 6003627a8058b93439ed4565f5b805cd
   - enabled: 1
-    path: Assets/Scenes/SpaceBattle/Battle.unity
+    path: Assets/Scenes/SpaceBattle/Space_Battle.unity
     guid: 08983e0c816f8854580e3af21c7af20b
   m_configObjects: {}
