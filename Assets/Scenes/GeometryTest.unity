@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 1806459153}
   - component: {fileID: 1806459154}
   m_Layer: 0
-  m_Name: Flag
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,6 @@ MonoBehaviour:
     Height: 0.4
   _planeSize: {x: 128, y: 128}
   _meshFilter: {fileID: 1806459153}
-  _meshColor: {r: 1, g: 0, b: 0, a: 0.33333334}
 --- !u!4 &1806459152
 Transform:
   m_ObjectHideFlags: 0
@@ -383,7 +382,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c3ad623b405337489561babf3b4c3bf, type: 2}
+  - {fileID: 2100000, guid: 00e08b2b86aee13428c4dc7b23275199, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

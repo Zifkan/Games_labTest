@@ -58,8 +58,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\GeometryTest\FlagBehaviour.cs" />
-     <Compile Include="Assets\Scripts\GeometryTest\PerlinNoiseJob.cs" />
+     <Compile Include="Assets\Grid.cs" />
+     <Compile Include="Assets\Scripts\MeshDeform\CustomJobs.cs" />
+     <Compile Include="Assets\Scripts\MeshDeform\Flag\Flag.cs" />
+     <Compile Include="Assets\Scripts\MeshDeform\GeometryTest\PlaneBehaviour.cs" />
+     <Compile Include="Assets\Scripts\MeshDeform\MeshData.cs" />
      <Compile Include="Assets\Scripts\Metro\FindWayAlgorithm.cs" />
      <Compile Include="Assets\Scripts\Metro\Graph.cs" />
      <Compile Include="Assets\Scripts\Metro\MetroBehaviour.cs" />
@@ -90,7 +93,9 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ScriptableObjectUtility.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ShipPlacer.cs" />
-     <None Include="Assets\_Shaders\noiseSimplex.cginc" />
+     <None Include="Assets\Shaders\Flag.shader" />
+     <None Include="Assets\Shaders\Wave_cginc.cginc" />
+     <None Include="Assets\Shaders\PerlinNoise.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -123,6 +128,12 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -300,6 +311,9 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>F:/GameLabs_Test/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

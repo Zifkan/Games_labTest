@@ -1,30 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MeshDeform;
 using Unity.Collections;
 using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
 
-namespace GeometryTest
+namespace Mesh.GeometryTest
 {
-    public struct MeshData
-    {
-        public NativeArray<Vector3> Vertices;
-        public NativeArray<int> Triangles;
-        public NativeArray<Vector3> Normals;
-        public NativeArray<Vector2> Uv;
-        public NativeArray<Color> Colors;
-        
-        public void Dispose()
-        {
-           Vertices.Dispose();
-           Triangles.Dispose();
-           Normals.Dispose();
-           Uv.Dispose();
-           Colors.Dispose();
-        }
-    }
-    
     [Serializable]
     public struct Octave 
     {
@@ -33,7 +17,7 @@ namespace GeometryTest
         public float Height;
     }
     
-    public class FlagBehaviour : MonoBehaviour
+    public class PlaneBehaviour : MonoBehaviour
     {
         [SerializeField]
         private Octave[] _octaves;
@@ -43,13 +27,10 @@ namespace GeometryTest
         
         [SerializeField] 
         private MeshFilter _meshFilter;
-
-        [SerializeField] 
-        private Color _meshColor = Color.white;
         
         private MeshData _meshData;
         private JobHandle _jobHandle;
-        private Mesh _mesh;
+        private UnityEngine.Mesh _mesh;
 
         private void Awake()
         {
@@ -57,18 +38,15 @@ namespace GeometryTest
             var vertexCount = quadCount * 4;
             var triangleCount = vertexCount * 6;
 
-            _meshData.Vertices = new NativeArray<Vector3>(vertexCount, Allocator.Persistent);
+            _meshData.Vertices = new NativeArray<float3>(vertexCount, Allocator.Persistent);
             _meshData.Triangles = new NativeArray<int>(triangleCount, Allocator.Persistent);
-            _meshData.Normals = new NativeArray<Vector3>(vertexCount, Allocator.Persistent);
             _meshData.Uv = new NativeArray<Vector2>(vertexCount, Allocator.Persistent);
-            _meshData.Colors = new NativeArray<Color>(vertexCount, Allocator.Persistent);
 
             var job = new CreatePlaneJob
             {
                 MeshData = _meshData,
                 PlaneSize = _planeSize,
-                QuadCount = quadCount,
-                MeshColor = _meshColor
+                VertCount = vertexCount,
             };
 
             _jobHandle = job.Schedule();
@@ -76,7 +54,7 @@ namespace GeometryTest
 
         private void Start()
         {
-            _mesh = new Mesh();
+            _mesh = new UnityEngine.Mesh();
             _mesh.MarkDynamic();
             _mesh.name = "Plane Mesh";
             
@@ -88,15 +66,8 @@ namespace GeometryTest
         {
             _mesh.SetVertices(_meshData.Vertices);
             _mesh.SetTriangles(_meshData.Triangles.ToArray(),0);
-            _mesh.SetNormals(_meshData.Normals);
             _mesh.SetUVs(0,_meshData.Uv);
-            _mesh.SetColors(_meshData.Colors);
             _mesh.RecalculateNormals();
-            // _mesh.vertices = _meshData.Vertices.ToArray();
-            // _mesh.triangles = _meshData.Triangles.ToArray();
-            // _mesh.normals = _meshData.Normals.ToArray();
-            // _mesh.uv = _meshData.Uv.ToArray();
-            // _mesh.colors = _meshData.Colors.ToArray();
             _meshFilter.sharedMesh = _mesh;
         }
 
@@ -106,10 +77,10 @@ namespace GeometryTest
             
             var vertCount = _meshData.Vertices.Length;
             
-            for (var i = 0; i <vertCount; i++)
+            /*for (var i = 0; i <vertCount; i++)
             {
                 _meshData.Vertices[i] = new Vector3(_meshData.Vertices[i].x,0,_meshData.Vertices[i].z);
-            }
+            }*/
             
             for (int i = 0; i < _octaves.Length; i++)
             {
@@ -123,7 +94,7 @@ namespace GeometryTest
             }
             
             jobHandles.Last().Complete();
-        
+            _mesh.SetVertices(_meshData.Vertices);
             BuildMesh();
         }
 
