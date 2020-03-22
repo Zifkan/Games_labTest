@@ -32,6 +32,8 @@ namespace SpaceBattle
                 ship.transform.position = point.position;
 
                 _battlePoints.Remove(point);
+                
+                ship.Fight();
             }
         }
 

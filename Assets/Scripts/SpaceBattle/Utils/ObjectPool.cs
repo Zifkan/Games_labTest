@@ -24,9 +24,28 @@ namespace SpaceBattle.Utils
             }
         }
 
+        public ObjectPool(T obj, int poolSize)
+        {
+            _objRef = obj;
+            _poolSize = poolSize;
+            _poolableQueue = new Queue<T>(poolSize);
+
+            for (int i = 0; i < _poolSize; i++)
+            {
+                var instance = InstantiateObj();
+                _poolableQueue.Enqueue(instance);
+            }
+        }
+
         private T InstantiateObj()
         {
-            var instance = Object.Instantiate(_objRef,_parent);
+            var instance = Object.Instantiate(_objRef);
+            
+            if (_parent != null)
+            {
+                instance.transform.SetParent(_parent);
+            }
+
             instance.gameObject.SetActive(false);
             instance.transform.localPosition = Vector3.zero;
             instance.transform.localEulerAngles = Vector3.zero;

@@ -4,6 +4,7 @@ using System.Linq;
 using SpaceBattle.Enums;
 using SpaceBattle.Modules;
 using SpaceBattle.Modules.Factory;
+using SpaceBattle.Utils;
 using UnityEngine;
 
 namespace SpaceBattle.SpaceShips
@@ -24,6 +25,9 @@ namespace SpaceBattle.SpaceShips
         [SerializeField] 
         private List<Slot> _slots;
 
+        [SerializeField] 
+        private Shell _shellPrefab;
+        
         private GameStage _gameStage;
 
         private float _maxHealth;
@@ -37,6 +41,8 @@ namespace SpaceBattle.SpaceShips
         
         private readonly Dictionary<SlotType,List<Slot>> _slotsCollection = new Dictionary<SlotType, List<Slot>>();
         private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
+
+        private ObjectPool<Shell> _shellPool;
         
         public float CoolDownFactorPercent => _coolDownFactor;
         public List<Slot> SlotsCollection => _slots;
@@ -94,6 +100,7 @@ namespace SpaceBattle.SpaceShips
         public void Fight()
         {
             _gameStage = GameStage.Battle;
+            _shellPool = new ObjectPool<Shell>(_shellPrefab,10);
         }
 
         public void GetDamage(float damage)
@@ -140,7 +147,6 @@ namespace SpaceBattle.SpaceShips
             
             ShieldRestore();
             Fire();
-
             Death();
         }
 
@@ -152,7 +158,11 @@ namespace SpaceBattle.SpaceShips
 
                 if (weapon.IsShootReady)
                 {
+                   var shell = _shellPool.Get();
                    var damage =  weapon.Shoot();
+                   shell.Init(_shellPool,damage);
+                   shell.transform.forward = transform.forward;
+                   shell.transform.position = transform.position;
                 }
             }
         }

@@ -83,7 +83,7 @@ namespace SpaceBattle
             });
         }
 
-        public void EndFight()
+        private void EndFight()
         {
             Debug.Log("End fight");
             _sceneLoadStateInfo.ForEach(info =>
@@ -94,8 +94,6 @@ namespace SpaceBattle
                 }
             });
         }
-
-       
 
         private void Update()
         {

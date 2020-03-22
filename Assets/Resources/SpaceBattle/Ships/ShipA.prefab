@@ -149,3 +149,5 @@ MonoBehaviour:
     _transformPlace: {fileID: 0}
   - _slotType: 1
     _transformPlace: {fileID: 0}
+  _shellPrefab: {fileID: 6683412032904985705, guid: ed625ca00fe0f7d4da82320bda68df75,
+    type: 3}
