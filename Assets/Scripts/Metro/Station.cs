@@ -7,14 +7,14 @@ namespace Metro
         public Station Station { get; }
         public bool IsUnvisited { get; set; }
         public int EdgesWeightSum { get; set; }
-        public Station PreviousVertex { get; set; }
+        public Station PreviousStation { get; set; }
      
         public StationInfo(Station station)
         {
             Station = station;
             IsUnvisited = true;
             EdgesWeightSum = int.MaxValue;
-            PreviousVertex = null;
+            PreviousStation = null;
         }
     }
     
@@ -34,20 +34,23 @@ namespace Metro
         public string Name { get; }
         public List<Path> Paths { get; }
 
-        public Station(string vertexName)
+        public MetroBranchType Branch{ get; }
+        
+        public Station(string name, MetroBranchType branch)
         {
-            Name = vertexName;
+            Name = name;
+            Branch = branch;
             Paths = new List<Path>();
         }
-
-        private void AddEdge(Path newEdge)
+        
+        public bool IsPart(MetroBranchType t)
         {
-            Paths.Add(newEdge);
+            return (Branch & t) == Branch;
         }
-
+       
         public void AddEdge(Station vertex, int edgeWeight)
         {
-            AddEdge(new Path(vertex, edgeWeight));
+            Paths.Add(new Path(vertex, edgeWeight));
         }
 
         public override string ToString() => Name;

@@ -119,7 +119,7 @@ namespace GeometryTest
                     Octave = _octaves[i],
                     Time = Time.timeSinceLevelLoad
                 };
-                 jobHandles.Add(noiseJob.Schedule(vertCount, 256, i == 0 ? new JobHandle() : jobHandles[i - 1]));
+                jobHandles.Add(noiseJob.Schedule(vertCount, 256, i == 0 ? new JobHandle() : jobHandles[i - 1]));
             }
             
             jobHandles.Last().Complete();

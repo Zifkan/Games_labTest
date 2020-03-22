@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Metro\FindWayAlgorithm.cs" />
      <Compile Include="Assets\Scripts\Metro\Graph.cs" />
      <Compile Include="Assets\Scripts\Metro\MetroBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Metro\MetroBranchType.cs" />
      <Compile Include="Assets\Scripts\Metro\Station.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\BattleController.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\CustomEventArgs\ButtonEventArgs.cs" />
@@ -89,6 +90,7 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ScriptableObjectUtility.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ShipPlacer.cs" />
+     <None Include="Assets\_Shaders\noiseSimplex.cginc" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>F:/GameLabs_Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

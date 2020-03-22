@@ -4,56 +4,40 @@ namespace Metro
 {
     public class FindWayAlgorithm
     {
-        Graph graph;
+        readonly Graph _graph;
 
-        List<StationInfo> infos;
-
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="graph">Граф</param>
+        readonly Dictionary<Station,StationInfo> _infos = new Dictionary<Station,StationInfo>();
+    
         public FindWayAlgorithm(Graph graph)
         {
-            this.graph = graph;
+            _graph = graph;
         }
 
         void InitInfo()
         {
-            infos = new List<StationInfo>();
-            foreach (var v in graph.Vertices)
+            foreach (var v in _graph.Stations)
             {
-                infos.Add(new StationInfo(v));
+                _infos.Add(v.Value,new StationInfo(v.Value));
             }
         }
 
     
         StationInfo GetVertexInfo(Station v)
         {
-            foreach (var i in infos)
-            {
-                if (i.Station.Equals(v))
-                {
-                    return i;
-                }
-            }
-
-            return null;
+            return _infos.ContainsKey(v) ? _infos[v] : null;
         }
-
-        /// <summary>
-        /// Поиск непосещенной вершины с минимальным значением суммы
-        /// </summary>
-        /// <returns>Информация о вершине</returns>
+       
         public StationInfo FindUnvisitedVertexWithMinSum()
         {
             var minValue = int.MaxValue;
             StationInfo minVertexInfo = null;
-            foreach (var i in infos)
+            
+            foreach (var stationInfo in _infos.Values)
             {
-                if (i.IsUnvisited && i.EdgesWeightSum < minValue)
+                if (stationInfo.IsUnvisited && stationInfo.EdgesWeightSum < minValue)
                 {
-                    minVertexInfo = i;
-                    minValue = i.EdgesWeightSum;
+                    minVertexInfo = stationInfo;
+                    minValue = stationInfo.EdgesWeightSum;
                 }
             }
 
@@ -63,14 +47,14 @@ namespace Metro
         
         public string FindShortestPath(string startName, string finishName)
         {
-            return FindShortestPath(graph.FindVertex(startName), graph.FindVertex(finishName));
+            return FindShortestPath(_graph.FindStation(startName), _graph.FindStation(finishName));
         }
 
      
-        public string FindShortestPath(Station startVertex, Station finishVertex)
+        private string FindShortestPath(Station start, Station finishVertex)
         {
             InitInfo();
-            var first = GetVertexInfo(startVertex);
+            var first = GetVertexInfo(start);
             first.EdgesWeightSum = 0;
             while (true)
             {
@@ -83,36 +67,46 @@ namespace Metro
                 SetSumToNextVertex(current);
             }
 
-            return GetPath(startVertex, finishVertex);
+            return GetPath(start, finishVertex);
         }
 
      
         void SetSumToNextVertex(StationInfo info)
         {
             info.IsUnvisited = false;
-            foreach (var e in info.Station.Paths)
+            foreach (var path in info.Station.Paths)
             {
-                var nextInfo = GetVertexInfo(e.ConnectedVertex);
-                var sum = info.EdgesWeightSum + e.EdgeWeight;
+                var nextInfo = GetVertexInfo(path.ConnectedVertex);
+                var sum = info.EdgesWeightSum + path.EdgeWeight;
                 if (sum < nextInfo.EdgesWeightSum)
                 {
                     nextInfo.EdgesWeightSum = sum;
-                    nextInfo.PreviousVertex = info.Station;
+                    nextInfo.PreviousStation = info.Station;
                 }
             }
         }
 
        
-        string GetPath(Station startVertex, Station endVertex)
+        string GetPath(Station start, Station end)
         {
-            var path = endVertex.ToString();
-            while (startVertex != endVertex)
+            var path = end.ToString();
+
+            var transferCount = 0;
+            
+            while (start != end)
             {
-                endVertex = GetVertexInfo(endVertex).PreviousVertex;
-                path = endVertex.ToString() + path;
+                var previous = GetVertexInfo(end).PreviousStation;
+                
+                if (previous.IsPart(end.Branch))
+                {
+                    transferCount++;
+                }
+
+                end = previous;
+                path = end + path;
             }
 
-            return path;
+            return path + "; Transfer count: "+transferCount;
         }
     }
 }

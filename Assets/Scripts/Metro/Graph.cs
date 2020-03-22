@@ -4,35 +4,24 @@ namespace Metro
 {
     public class Graph
     {
-        public List<Station> Vertices { get; }
+        private readonly Dictionary<string,Station> _stations = new Dictionary<string,Station>();
 
-        public Graph()
+        public Dictionary<string,Station> Stations => _stations;
+
+        public void AddStation(string stationName, MetroBranchType branch)
         {
-            Vertices = new List<Station>();
+            Stations.Add(stationName,new Station(stationName, branch));
         }
 
-        public void AddVertex(string vertexName)
+        public Station FindStation(string name)
         {
-            Vertices.Add(new Station(vertexName));
-        }
-
-        public Station FindVertex(string vertexName)
-        {
-            foreach (var v in Vertices)
-            {
-                if (v.Name.Equals(vertexName))
-                {
-                    return v;
-                }
-            }
-
-            return null;
+            return Stations.ContainsKey(name) ? Stations[name] : null;
         }
 
         public void AddEdge(string firstName, string secondName, int weight)
         {
-            var v1 = FindVertex(firstName);
-            var v2 = FindVertex(secondName);
+            var v1 = FindStation(firstName);
+            var v2 = FindStation(secondName);
             if (v2 != null && v1 != null)
             {
                 v1.AddEdge(v2, weight);
