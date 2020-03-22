@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 764
     height: 598
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 155
+  controlID: 146
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 153
+  controlID: 183
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 154
+  controlID: 145
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 88
+  controlID: 125
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -943,7 +943,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/SpaceBattle/Ships
+    - Assets/Scripts/SpaceBattle/SpaceShips
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders:
@@ -956,7 +956,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b2340000
     m_LastClickedID: 13490
-    m_ExpandedIDs: 00000000983500009a3500009c3500009e350000a0350000a2350000a4350000a6350000a8350000aa350000ac350000ae350000b0350000
+    m_ExpandedIDs: 00000000923500009435000096350000983500009a3500009c3500009e350000a0350000a2350000a4350000a6350000a8350000aa350000ac350000ae350000b0350000b2350000b4350000b6350000b8350000ba350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -981,10 +981,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 167}
+    scrollPos: {x: 0, y: 359}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 6418ffffffffffff00000000983500009a3500009c3500009e350000a0350000a2350000a4350000a6350000a8350000ac350000ae350000c4350000c63500005c3a00005e3a0000603a0000623a0000643a0000b2460000a6490000a27a0000
+    m_ExpandedIDs: ffffffff00000000923500009435000096350000983500009a3500009c3500009e350000a0350000a2350000a4350000a6350000a8350000aa350000ac350000ae350000b0350000b2350000b4350000b6350000b8350000ba350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1107,23 +1107,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: eca1fdff
+      m_SelectedIDs: a02f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 04a2fdffd4b6fdffd6b6fdffc2b7fdff4ab8fdffa6bafdff9ad8fdff9ed8fdffa0d8fdffd4d8fdff5ed9fdfffcdbfdff22dcfdff7cddfdff7eddfdffe8defdff22e3fdff26e3fdff7ce3fdff7ee3fdffa4e3fdff04e4fdffa4e5fdff38e6fdff84e6fdffe2e6fdff90e8fdff12e9fdff92e9fdff36ebfdff38ebfdfff0ecfdff40edfdffacfcfdffae09feff2237feff9a38feffa838feff7839feffcc31ffffc464ffffa891ffffbc91ffff0c92ffff5ccaffff80caffff98ccffff8aceffffa4cfffff36d0ffff3cd0ffff42d0ffff60fbfffff4ffffffec340000fe340000c83d0000dc3d0000de85000018860000
+      m_ExpandedIDs: 6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: BattleController
-        m_OriginalName: BattleController
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -139908
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 

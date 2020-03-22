@@ -50,20 +50,12 @@ namespace SpaceBattle
             {
                 var instantiatedShip = Instantiate(ship, new Vector3(0, 0, 0), Quaternion.identity);
                 _ships.Add(instantiatedShip);
-                
-                instantiatedShip.DeadEvent+=OnDead;
-                
             }
             
             SceneManager.sceneLoaded+=SceneManagerOnsceneLoaded;
             
             _gameStage = GameStage.ShipConstruct;
             _shipConstructor.Init(_ships,_shipMenu,_placer);
-        }
-
-        private void OnDead(object sender, EventArgs e)
-        {
-            EndFight();
         }
 
         private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -83,7 +75,7 @@ namespace SpaceBattle
             });
         }
 
-        private void EndFight()
+        public void EndFight()
         {
             Debug.Log("End fight");
             _sceneLoadStateInfo.ForEach(info =>
@@ -102,11 +94,6 @@ namespace SpaceBattle
                 _gameStage = GameStage.ShipConstruct;
                 EndFight();
             }
-        }
-
-        private void OnDestroy()
-        {
-            _ships.ForEach(ship => ship.DeadEvent-=OnDead);
         }
     }
 }

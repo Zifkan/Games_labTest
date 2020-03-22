@@ -11,10 +11,13 @@ namespace SpaceBattle
         
         private float _damage;
         private ObjectPool<Shell> _shellPool;
-        public void Init(ObjectPool<Shell> shellPool,float damage)
+        private Vector3 _direction;
+        
+        public void Init(ObjectPool<Shell> shellPool, float damage, Vector3 direction)
         {
             _damage = damage;
             _shellPool = shellPool;
+            _direction = direction;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -40,7 +43,7 @@ namespace SpaceBattle
 
         private void Update()
         {
-            transform.position += Vector3.forward * Time.deltaTime * _movementSpeed;
+            transform.position += _direction * Time.deltaTime * _movementSpeed;
         }
     }
 }

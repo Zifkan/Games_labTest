@@ -160,7 +160,7 @@ namespace SpaceBattle.SpaceShips
                 {
                    var shell = _shellPool.Get();
                    var damage =  weapon.Shoot();
-                   shell.Init(_shellPool,damage);
+                   shell.Init(_shellPool,damage, transform.forward);
                    shell.transform.forward = transform.forward;
                    shell.transform.position = transform.position;
                 }
