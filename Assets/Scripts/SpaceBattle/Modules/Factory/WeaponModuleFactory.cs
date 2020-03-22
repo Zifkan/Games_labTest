@@ -70,10 +70,11 @@ namespace SpaceBattle.Modules.Factory
                 ship.RemoveWeapon(this);
             }
 
-            public void Shoot()
+            public float Shoot()
             {
                 _lastShootTime = Time.time;
                 Debug.Log("Weapon damage: "+_damage);
+                return _damage;
             }
         }
     }

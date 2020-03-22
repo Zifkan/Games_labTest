@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\Factory\WeaponModuleFactory.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\IShipModule.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Modules\ShipModule.cs" />
+     <Compile Include="Assets\Scripts\SpaceBattle\Shell.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SingletonBehaviour.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\BaseSpaceShip.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\SpaceShips\ShipConstructor.cs" />

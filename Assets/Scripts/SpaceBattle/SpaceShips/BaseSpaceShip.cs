@@ -10,6 +10,8 @@ namespace SpaceBattle.SpaceShips
 {
     public class BaseSpaceShip : MonoBehaviour
     {
+        public event EventHandler DeadEvent;
+
         [SerializeField]
         private float _healthBase;
         
@@ -94,6 +96,16 @@ namespace SpaceBattle.SpaceShips
             _gameStage = GameStage.Battle;
         }
 
+        public void GetDamage(float damage)
+        {
+            var shieldDelta = _currentShield - damage;
+
+            if (shieldDelta < 0)
+            {
+                _currentHealth += shieldDelta;
+            }
+        }
+
         public void Reset()
         {
             _maxHealth = _healthBase;
@@ -140,7 +152,7 @@ namespace SpaceBattle.SpaceShips
 
                 if (weapon.IsShootReady)
                 {
-                    weapon.Shoot();
+                   var damage =  weapon.Shoot();
                 }
             }
         }
@@ -155,7 +167,7 @@ namespace SpaceBattle.SpaceShips
         {
             if (_currentHealth <= 0)
             {
-                Debug.Log("Death");
+                OnDeadEvent();
             }
         }
 
@@ -185,6 +197,11 @@ namespace SpaceBattle.SpaceShips
                     }
                 }
             }
+        }
+
+        protected virtual void OnDeadEvent()
+        {
+            DeadEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 }
