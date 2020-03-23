@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flag.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Flag.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" afterDir="false" />
-    </list>
+    <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +202,7 @@
       <workItem from="1584630349701" duration="29283000" />
       <workItem from="1584867606120" duration="490000" />
       <workItem from="1584868116939" duration="48000" />
-      <workItem from="1584868212205" duration="65129000" />
+      <workItem from="1584868212205" duration="65414000" />
     </task>
     <servers />
   </component>

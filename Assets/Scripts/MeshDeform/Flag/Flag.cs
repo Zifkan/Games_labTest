@@ -8,6 +8,7 @@ namespace MeshDeform.Flag
 {
     enum TypeCalculation
     {
+        None,
         CPU,
         GPU,
     }
@@ -42,7 +43,7 @@ namespace MeshDeform.Flag
         private JobHandle _jobHandle;
         private UnityEngine.Mesh _mesh;
 
-        private TypeCalculation _lastCalc;
+        private TypeCalculation _lastCalc = TypeCalculation.None;
         private  MaterialPropertyBlock _mpb;
 
         private void Awake()
