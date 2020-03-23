@@ -72,8 +72,7 @@ namespace SpaceBattle.Modules.Factory
 
             public float Shoot()
             {
-                _lastShootTime = Time.time;
-                Debug.Log("Weapon damage: "+_damage);
+                _lastShootTime = Time.time; 
                 return _damage;
             }
         }

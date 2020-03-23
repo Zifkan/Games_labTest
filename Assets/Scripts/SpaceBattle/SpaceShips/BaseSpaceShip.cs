@@ -107,12 +107,14 @@ namespace SpaceBattle.SpaceShips
         {
             var shieldDelta = _currentShield - damage;
             
-            _currentShield = shieldDelta;
+            _currentShield = Mathf.Clamp(shieldDelta,0,_maxShield);
             
-            if (shieldDelta < 0)
+            if (shieldDelta <= 0)
             {
                 _currentHealth += shieldDelta;
             }
+            
+            Debug.Log($"Health: {_currentHealth}; Shield: {_currentShield}");
         }
 
         public void Reset()

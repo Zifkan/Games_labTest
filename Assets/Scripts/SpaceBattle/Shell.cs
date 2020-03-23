@@ -12,12 +12,15 @@ namespace SpaceBattle
         private float _damage;
         private ObjectPool<Shell> _shellPool;
         private Vector3 _direction;
-        
+        private Vector3 _startPos;
+
         public void Init(ObjectPool<Shell> shellPool, float damage, Vector3 direction)
         {
             _damage = damage;
             _shellPool = shellPool;
             _direction = direction;
+
+            _startPos = transform.position;
         }
 
 
@@ -44,6 +47,11 @@ namespace SpaceBattle
                     ship.GetDamage(_damage);
                     _shellPool.ReturnToPool(this);
                 }
+            }
+
+            if (Vector3.Distance(_startPos,transform.position) > 100)
+            {
+                _shellPool.ReturnToPool(this);
             }
         }
         
