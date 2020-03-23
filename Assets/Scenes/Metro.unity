@@ -325,6 +325,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c98d908c093a40d78a4f8345eec78f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stations:
+  - Name: A
+    Branch: 1
+  - Name: B
+    Branch: 3
+  - Name: C
+    Branch: 9
+  - Name: D
+    Branch: 5
+  - Name: E
+    Branch: 9
+  - Name: F
+    Branch: 3
+  - Name: G
+    Branch: 2
+  - Name: H
+    Branch: 2
+  - Name: J
+    Branch: 14
+  - Name: K
+    Branch: 8
+  - Name: L
+    Branch: 12
+  - Name: M
+    Branch: 8
+  - Name: N
+    Branch: 4
+  - Name: O
+    Branch: 4
+  _stationPaths:
+  - FirstStation: A
+    SecondStation: B
+    Length: 22
+  - FirstStation: B
+    SecondStation: C
+    Length: 33
+  - FirstStation: C
+    SecondStation: D
+    Length: 11
+  - FirstStation: C
+    SecondStation: K
+    Length: 1
+  - FirstStation: C
+    SecondStation: J
+    Length: 63
+  - FirstStation: D
+    SecondStation: L
+    Length: 41
+  - FirstStation: D
+    SecondStation: J
+    Length: 35
+  - FirstStation: E
+    SecondStation: J
+    Length: 17
+  - FirstStation: E
+    SecondStation: M
+    Length: 17
+  - FirstStation: F
+    SecondStation: J
+    Length: 84
+  - FirstStation: F
+    SecondStation: G
+    Length: 25
+  - FirstStation: L
+    SecondStation: N
+    Length: 5
+  - FirstStation: K
+    SecondStation: L
+    Length: 10
+  _startStation: A
+  _destinationStation: J
 --- !u!4 &1506549613
 Transform:
   m_ObjectHideFlags: 0

@@ -2,13 +2,13 @@ using System.Collections.Generic;
 
 namespace Metro
 {
-    public class FindWayAlgorithm
+    public class WayFinder
     {
         readonly Graph _graph;
 
         readonly Dictionary<Station,StationInfo> _infos = new Dictionary<Station,StationInfo>();
     
-        public FindWayAlgorithm(Graph graph)
+        public WayFinder(Graph graph)
         {
             _graph = graph;
         }
@@ -26,8 +26,8 @@ namespace Metro
         {
             return _infos.ContainsKey(v) ? _infos[v] : null;
         }
-       
-        public StationInfo FindUnvisitedVertexWithMinSum()
+
+        private StationInfo FindUnvisitedVertexWithMinSum()
         {
             var minValue = int.MaxValue;
             StationInfo minVertexInfo = null;

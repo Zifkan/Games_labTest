@@ -1,59 +1,60 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Metro
 {
+    [Serializable]
+    struct StationData
+    {
+        public string Name;
+        public MetroBranchType Branch;
+    }
+
+    [Serializable]
+    struct StationPath
+    {
+        public string FirstStation;
+        public string SecondStation;
+        public int Length;
+    }
+    
     public class MetroBehaviour : MonoBehaviour
     {
+        [SerializeField]
+        private List<StationData> _stations;
+
+        [SerializeField]
+        private List<StationPath> _stationPaths;
+
+        
+        [SerializeField]
+        private string _startStation;
+        
+        [SerializeField]
+        private string _destinationStation;
+
+        
         private void Start()
         {
             var g = new Graph();
-          
-            g.AddStation("A",MetroBranchType.Red);
-            g.AddStation("B",MetroBranchType.Red | MetroBranchType.Black);
-            g.AddStation("C", MetroBranchType.Red | MetroBranchType.Green);
-            g.AddStation("D",MetroBranchType.Red | MetroBranchType.Blue);
-            g.AddStation("E", MetroBranchType.Red | MetroBranchType.Green);
-            g.AddStation("F",MetroBranchType.Red | MetroBranchType.Black);
-            g.AddStation("G",MetroBranchType.Black);
-            
-            g.AddStation("H",MetroBranchType.Black);
-            g.AddStation("J",MetroBranchType.Black | MetroBranchType.Blue);
-            g.AddStation("K", MetroBranchType.Green);
-            g.AddStation("L",MetroBranchType.Green | MetroBranchType.Blue);
-            g.AddStation("M", MetroBranchType.Green);
-            g.AddStation("N",MetroBranchType.Blue);
-            g.AddStation("O",MetroBranchType.Blue);
-            
 
-            g.AddEdge("A", "B", 22);
-            g.AddEdge("B", "C", 33);
-            
-            g.AddEdge("C", "D", 11);
-            g.AddEdge("C", "K", 1);
-            g.AddEdge("C", "J", 63);
-            
-            g.AddEdge("D", "L", 41);
-            g.AddEdge("D", "J", 35);
+            for (int i = 0; i < _stations.Count; i++)
+            {
+                var st = _stations[i];
+                g.AddStation(st.Name,st.Branch);
+            }
 
-            g.AddEdge("E", "J", 17);
-            g.AddEdge("E", "M", 17);    
+            for (int i = 0; i < _stationPaths.Count; i++)
+            {
+                var pathInfo = _stationPaths[i];
+                g.AddPath(pathInfo.FirstStation,pathInfo.SecondStation,pathInfo.Length);
+            }
             
-            
-            g.AddEdge("F", "J", 84);
-            g.AddEdge("F", "G", 25);
-            
-            g.AddEdge("L", "N", 5);
-            g.AddEdge("K", "L", 10);
-            // g.AddEdge("A", "D", 61);
-            // g.AddEdge("B", "C", 47);
-            // g.AddEdge("B", "E", 93);
-            //
-            //
-            // g.AddEdge("E", "F", 17);
-            // g.AddEdge("E", "G", 58);
+           
 
-            var dijkstra = new FindWayAlgorithm(g);
-            var path = dijkstra.FindShortestPath("A", "N");
+            var finder = new WayFinder(g);
+            var path = finder.FindShortestPath(_startStation, _destinationStation);
             Debug.Log(path);
         }
     }

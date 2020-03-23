@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Metro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Metro.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,11 +139,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/BattleController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Shell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBranchType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Station.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Custom.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/PerlinNoise.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GeometryTest/FlagBehaviour.cs" />
@@ -153,9 +154,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/PerlinNoiseJob.cs" />
         <option value="$PROJECT_DIR$/Assets/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/Graph.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -207,7 +211,7 @@
       <workItem from="1584630349701" duration="29283000" />
       <workItem from="1584867606120" duration="490000" />
       <workItem from="1584868116939" duration="48000" />
-      <workItem from="1584868212205" duration="41913000" />
+      <workItem from="1584868212205" duration="43993000" />
     </task>
     <servers />
   </component>
@@ -358,10 +362,10 @@
           <line>91</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" initialLine="91">
             <startOffsets>
-              <option value="2509" />
+              <option value="2489" />
             </startOffsets>
             <endOffsets>
-              <option value="2535" />
+              <option value="2515" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="40" />

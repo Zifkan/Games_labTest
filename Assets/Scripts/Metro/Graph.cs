@@ -18,14 +18,14 @@ namespace Metro
             return Stations.ContainsKey(name) ? Stations[name] : null;
         }
 
-        public void AddEdge(string firstName, string secondName, int weight)
+        public void AddPath(string firstName, string secondName, int length)
         {
             var v1 = FindStation(firstName);
             var v2 = FindStation(secondName);
             if (v2 != null && v1 != null)
             {
-                v1.AddEdge(v2, weight);
-                v2.AddEdge(v1, weight);
+                v1.AddEdge(v2, length);
+                v2.AddEdge(v1, length);
             }
         }
     }
