@@ -5,12 +5,9 @@ Properties
 {   
     _Color ("Main Color", Color) = (1,1,1,1)
     _SpecColor ("Specular Color", Color) = (0.5, 0.5, 0.5, 0)
-    _Shininess ("Shininess", Range (0.01, 1)) = 0.078125
     _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" {}
-    _BumpMap ("Normalmap", 2D) = "bump" {}   
-  
-    _Cutoff ("Shadow Alpha cutoff", Range(0.25,0.9)) = 1.0 
-   
+    _BumpMap ("Normalmap", 2D) = "bump" {}  
+    
     _WaveSpeed ("Wave Speed", Range(0.0, 300.0)) = 50.0
     _WaveStrength ("Wave Strength", Range(0.0, 5.0)) = 1.0
     _time("Time",float) = 0.0
@@ -31,10 +28,7 @@ SubShader
             Name "ShadowCaster"
             Tags { "LightMode" = "ShadowCaster" }
            
-            Fog {Mode Off}
-            ZWrite On ZTest Less Cull Off
-            Offset 1, 1
- 
+           
             CGPROGRAM
 
             #pragma vertex vert
@@ -68,11 +62,7 @@ CGPROGRAM
         #pragma surface surf BlinnPhong alpha vertex:vert fullforwardshadows approxview
         #include "Wave_cginc.cginc"
  
- 
-        half _Shininess;
- 
         sampler2D _BumpMap;
-        float _Parallax;
  
         struct Input {
             float2 uv_MainTex;
@@ -91,7 +81,6 @@ CGPROGRAM
             o.Albedo = tex.rgb * _Color.rgb;
             o.Gloss = tex.a;
             o.Alpha = tex.a * _Color.a;
-            o.Specular = _Shininess;
             o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
         }
 ENDCG

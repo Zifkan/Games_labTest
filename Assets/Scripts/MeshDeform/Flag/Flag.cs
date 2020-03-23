@@ -23,10 +23,10 @@ namespace MeshDeform.Flag
         [SerializeField] 
         private MeshRenderer _meshRenderer;
         
-        [SerializeField] 
+        [SerializeField] [Range(0,300f)]
         private float _waveSpeed;
         
-        [SerializeField] 
+        [SerializeField] [Range(0,5f)]
         private float _waveStrength;
 
         [SerializeField] 
@@ -108,9 +108,9 @@ namespace MeshDeform.Flag
 
             if (_calc == TypeCalculation.GPU)
             {
+                _meshRenderer.GetPropertyBlock(_mpb);
                 _mpb.SetFloat("_WaveSpeed",_waveSpeed);
                 _mpb.SetFloat("_WaveStrength",_waveStrength);
-                _mpb.SetFloat("_time",Time.timeSinceLevelLoad);
                 _meshRenderer.SetPropertyBlock(_mpb);
             }
 

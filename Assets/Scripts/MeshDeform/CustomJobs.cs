@@ -37,35 +37,36 @@ namespace MeshDeform
 
         public void Execute()
         {
-            var width  = (PlaneSize.x * PlaneSize.x);
-            var length = (PlaneSize.y * PlaneSize.y);
+            float width  = PlaneSize.x;
+            float length = PlaneSize.y;
             
-            var xOffset = width / PlaneSize.x;
-            var yOffset = length / PlaneSize.y;
+            float xOffset = width / PlaneSize.x;
+            float yOffset = length / PlaneSize.y;
             
            
             for (int i = 0; i < MeshData.Vertices.Length ; i++)
             {
-                var vert =  new Vector3(-width/2 + (xOffset * (i % (PlaneSize.x+1))),0, length/2 + (-yOffset * (i / (PlaneSize.x+1))));
+                var vert =  new Vector3(-width/2 + (xOffset * (i % (PlaneSize.x+1))),0, -length/2 + (yOffset * (i / (PlaneSize.x+1))));
                 MeshData.Vertices[i] = vert;
                 MeshData.BaseVertices[i] = vert;
-                
-                MeshData.UVs[i] = new Vector2(vert.x / PlaneSize.x, vert.z / PlaneSize.y);
+
+                MeshData.UVs[i] = new Vector2((vert.x + width/2)/width, (vert.z + length/2)/length);
             }
 
             for (int ti = 0, vi = 0, y = 0; y < PlaneSize.y; y++, vi++) 
             {
                 for (int x = 0; x < PlaneSize.x; x++, ti += 6, vi++) 
                 {
-                     MeshData.Triangles[ti] = vi;
-                     MeshData.Triangles[ti + 3] =  MeshData.Triangles[ti + 2] = vi + 1;
-                     MeshData.Triangles[ti + 4] =  MeshData.Triangles[ti + 1] = vi + PlaneSize.x + 1;
+                     MeshData.Triangles[ti ] = vi;
+                     MeshData.Triangles[ti + 1] = vi + PlaneSize.x+ 1;
+                     MeshData.Triangles[ti+ 2] = vi  + 1;
+                     
+                     MeshData.Triangles[ti + 3] = vi  + 1;
+                     MeshData.Triangles[ti + 4] = vi + PlaneSize.x+ 1;
                      MeshData.Triangles[ti + 5] = vi + PlaneSize.x + 2;
                 }
             }
         }
-        
-        static float  Normalize(float val,float max,float min) { return (val - min) / (max - min); }
     }
     
     [BurstCompile]
