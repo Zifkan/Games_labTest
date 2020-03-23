@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moduleName: WeaponA
   _coolDown: 3
-  _damage: 5
+  _damage: 50
   _slotType: 1
   _model: {fileID: 0}

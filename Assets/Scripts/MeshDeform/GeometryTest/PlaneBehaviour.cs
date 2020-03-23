@@ -40,7 +40,7 @@ namespace Mesh.GeometryTest
 
             _meshData.Vertices = new NativeArray<float3>(vertexCount, Allocator.Persistent);
             _meshData.Triangles = new NativeArray<int>(triangleCount, Allocator.Persistent);
-            _meshData.Uv = new NativeArray<Vector2>(vertexCount, Allocator.Persistent);
+            _meshData.Uv = new NativeArray<float2>(vertexCount, Allocator.Persistent);
 
             var job = new CreatePlaneJob
             {
@@ -70,32 +70,32 @@ namespace Mesh.GeometryTest
             _meshFilter.sharedMesh = _mesh;
         }
 
-        private void Update()
-        {
-            var jobHandles = new List<JobHandle>();
-            
-            var vertCount = _meshData.Vertices.Length;
-            
-            /*for (var i = 0; i <vertCount; i++)
-            {
-                _meshData.Vertices[i] = new Vector3(_meshData.Vertices[i].x,0,_meshData.Vertices[i].z);
-            }*/
-            
-            for (int i = 0; i < _octaves.Length; i++)
-            {
-                var noiseJob = new PerlinNoiseJob
-                {
-                    Vertices = _meshData.Vertices,
-                    Octave = _octaves[i],
-                    Time = Time.timeSinceLevelLoad
-                };
-                jobHandles.Add(noiseJob.Schedule(vertCount, 256, i == 0 ? new JobHandle() : jobHandles[i - 1]));
-            }
-            
-            jobHandles.Last().Complete();
-            _mesh.SetVertices(_meshData.Vertices);
-            BuildMesh();
-        }
+        // private void Update()
+        // {
+        //     var jobHandles = new List<JobHandle>();
+        //     
+        //     var vertCount = _meshData.Vertices.Length;
+        //     
+        //     /*for (var i = 0; i <vertCount; i++)
+        //     {
+        //         _meshData.Vertices[i] = new Vector3(_meshData.Vertices[i].x,0,_meshData.Vertices[i].z);
+        //     }*/
+        //     
+        //     for (int i = 0; i < _octaves.Length; i++)
+        //     {
+        //         var noiseJob = new PerlinNoiseJob
+        //         {
+        //             Vertices = _meshData.Vertices,
+        //             Octave = _octaves[i],
+        //             Time = Time.timeSinceLevelLoad
+        //         };
+        //         jobHandles.Add(noiseJob.Schedule(vertCount, 256, i == 0 ? new JobHandle() : jobHandles[i - 1]));
+        //     }
+        //     
+        //     jobHandles.Last().Complete();
+        //     _mesh.SetVertices(_meshData.Vertices);
+        //     BuildMesh();
+        // }
 
 
         private void OnDestroy()

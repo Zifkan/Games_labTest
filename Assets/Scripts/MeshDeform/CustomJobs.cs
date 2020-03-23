@@ -38,30 +38,28 @@ namespace MeshDeform
 
         public void Execute()
         {
-            var width  = (PlaneSize.x * PlaneSize.x) * .5f;
-            var length = (PlaneSize.y * PlaneSize.y) * .5f;
+            var width  = (PlaneSize.x * PlaneSize.x);// * .5f;
+            var length = (PlaneSize.y * PlaneSize.y);// * .5f;
             
             var xOffset = width / PlaneSize.x;
             var yOffset = length / PlaneSize.y;
             
            
-            // for (int i = 0; i < VertCount ; i++)
-            // {
-            //     // var x = i % PlaneSize.x;
-            //     // var z = i / PlaneSize.x;
-            //     
-            //   //  MeshData.Vertices[i] = new Vector3(width/2 + (xOffset * (i % PlaneSize.x)),0, length/2 + (-yOffset * (i / PlaneSize.y)));
-            //   MeshData.Vertices[i] =  new Vector3(x,0, y);
-            // }
-            
-            for (int i = 0, y = 0; y <= PlaneSize.y; y++)
+            for (int i = 0; i < MeshData.Vertices.Length ; i++)
             {
-                for (int x = 0; x <= PlaneSize.x; x++, i++) 
-                {
-                    MeshData.Vertices[i] = new Vector3(x,0, y);
-                    MeshData.Uv[i] = new Vector2((float)x / PlaneSize.x, (float)y / PlaneSize.y);
-                }
+                var vert =  new Vector3(-width/2 + (xOffset * (i % (PlaneSize.x+1))),0, length/2 + (-yOffset * (i / (PlaneSize.x+1))));
+                MeshData.Vertices[i] = vert;
+                MeshData.Uv[i] = new Vector2(vert.x / (PlaneSize.x), vert.y / (PlaneSize.y));
             }
+            
+            // for (int i = 0, y = 0; y <= PlaneSize.y; y++)
+            // {
+            //     for (int x = 0; x <= PlaneSize.x; x++, i++) 
+            //     {
+            //         MeshData.Vertices[i] = new Vector3(x,0, y);
+            //         MeshData.Uv[i] = new Vector2((float)x / PlaneSize.x, (float)y / PlaneSize.y);
+            //     }
+            // }
             
             
             for (int ti = 0, vi = 0, y = 0; y < PlaneSize.y; y++, vi++) 
@@ -81,6 +79,9 @@ namespace MeshDeform
     public struct WavePlaneJob : IJobParallelFor
     {
         public NativeArray<float3> Vertices;
+        
+        [ReadOnly] 
+        public NativeArray<float2> UVs;
 
         [ReadOnly] 
         public float WaveStrength;
@@ -94,29 +95,34 @@ namespace MeshDeform
         public void Execute(int index)
         {
             var vertex = Vertices[index];
+            var uv = UVs[index];
+            
             float sinOff=(vertex.x+vertex.y+vertex.z) * WaveStrength;
-            float t=Time * WaveSpeed;
+            float t=-Time * WaveSpeed;
                 
-            float fx = vertex.x;
-            float fy = vertex.x* vertex.y;
-            
-          //  vertex.y =  math.cos((vertex.x + t)) *  vertex.x * WaveStrength;
-            
-            // vertex.x += math.sin(t*1.45f+sinOff) *0.5f;
-            // vertex.y =  math.sin(t*3.12f+sinOff) *0.5f;
-            // vertex.z -= math.sin(t*2.2f +sinOff) *0.2f;
-
-            
-            
-          
-            float3 dir = new float3(1,0,0) * vertex;
-            vertex.y += Mathf.Sin(t+ dir.x + dir.y + dir.z) ;
-            Vertices[index] = vertex;
-            
-            
+            float fx = uv.x;
+            float fy = uv.x * uv.y;
+     
+            vertex.x += math.sin(t*1.45f + sinOff) * fx * 0.5f;
+            vertex.y =  math.sin(t*3.12f + sinOff) * fx * 0.5f-fy * 0.9f;
+            vertex.z -= math.sin(t*2.2f  + sinOff) * fx * 0.2f;
             
             Vertices[index] = vertex;
         }
     }
-   
+    
+    
+    [BurstCompile]
+    public struct RefreshJob : IJobParallelFor
+    {
+        public NativeArray<float3> Vertices;
+        
+        public void Execute(int index)
+        {
+            var vertex = Vertices[index];
+           
+            vertex = float3.zero;
+            Vertices[index] = vertex;
+        }
+    }
 }

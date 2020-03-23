@@ -8,7 +8,7 @@ namespace MeshDeform
     {
         public NativeArray<float3> Vertices;
         public NativeArray<int> Triangles;
-        public NativeArray<Vector2> Uv;
+        public NativeArray<float2> Uv;
         
         public void Dispose()
         {
