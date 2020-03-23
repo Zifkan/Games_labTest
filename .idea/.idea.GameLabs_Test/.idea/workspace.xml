@@ -2,29 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/FlagShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagCpu.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagCpu.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagGpu.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagGpu.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Normal Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Normal Map.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FlagScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FlagScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flag.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flag.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UV.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UV.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Flags/FlagGpu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Flags/FlagGpu.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponA.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponA.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponB.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponB.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponC.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Modules/WeaponC.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Ships/ShipA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Ships/ShipA.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Ships/ShipB.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/SpaceBattle/Ships/ShipB.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptMapper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,13 +125,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/HealthModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/IShipModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldRestoreModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/CustomButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Enums/SlotType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Enums/GameStage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SingletonBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/ShootSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ObjectPool.cs" />
@@ -162,7 +153,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Shell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/ShipConstructor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/BattleController.cs" />
@@ -176,6 +166,9 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/FlagShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShipModule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" />
       </list>
     </option>
   </component>
@@ -227,7 +220,7 @@
       <workItem from="1584630349701" duration="29283000" />
       <workItem from="1584867606120" duration="490000" />
       <workItem from="1584868116939" duration="48000" />
-      <workItem from="1584868212205" duration="84595000" />
+      <workItem from="1584868212205" duration="86256000" />
     </task>
     <servers />
   </component>

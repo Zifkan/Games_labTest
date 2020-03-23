@@ -12,12 +12,17 @@ namespace SpaceBattle.Modules
         protected IShipModuleFactory _factory;
         protected GameObject _model;
         
+        protected GameObject _instantiatedModel;
+
         protected void AttachModuleToSlot(Transform slotTransform)
         {
-            if (_model == null) return;
-            _model.transform.parent.SetParent(slotTransform);
-            _model.transform.localPosition = Vector3.zero;
-            _model.transform.rotation = quaternion.identity;
+            if (_model == null || slotTransform == null) return;
+
+            _instantiatedModel = Object.Instantiate(_model);
+            
+            _instantiatedModel.transform.SetParent(slotTransform);
+            _instantiatedModel.transform.localPosition = Vector3.zero;
+            _instantiatedModel.transform.rotation = quaternion.identity;
         }
 
         public string ModuleName { get; set; }

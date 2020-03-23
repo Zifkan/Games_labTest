@@ -178,6 +178,7 @@ namespace SpaceBattle.SpaceShips
         {
             var valPerTick = _currentShieldRestorePerSec * Time.deltaTime;
             _currentShield = Mathf.Clamp(_currentShield + valPerTick + (valPerTick * _shieldRestoreFactorPercent), 0, _maxShield);
+            Debug.Log($"{gameObject.name} - Shield: {_currentShield}");
         }
 
         private void Death()

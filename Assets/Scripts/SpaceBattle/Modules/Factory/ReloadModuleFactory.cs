@@ -57,7 +57,10 @@ namespace SpaceBattle.Modules.Factory
 
             public override void OnRemovedFromShip(BaseSpaceShip ship)
             {
-
+                
+                if (_instantiatedModel!=null)
+                    Destroy(_instantiatedModel);
+                
                 ship.SetReloadFactor(-_reloadReduceRatio);
             }
         }

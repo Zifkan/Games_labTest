@@ -16,4 +16,4 @@ MonoBehaviour:
   _coolDown: 2
   _damage: 4
   _slotType: 1
-  _model: {fileID: 0}
+  _model: {fileID: 5938105317257967083, guid: 5241e226f04e89f44aeabb7603bcdfce, type: 3}

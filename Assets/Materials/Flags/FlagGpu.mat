@@ -67,6 +67,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ScrollXSpeed: 1.84
+    - _ScrollYSpeed: 3
     - _Shininess: 0.132
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -75,7 +77,7 @@ Material:
     - _WaveSpeed: 70
     - _WaveStrength: 3.81
     - _ZWrite: 1
-    - _time: 20.88
+    - _time: 9.08
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
