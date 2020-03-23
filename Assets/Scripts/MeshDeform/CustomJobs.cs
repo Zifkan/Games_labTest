@@ -27,13 +27,12 @@ namespace MeshDeform
         }
     }
 
-  //  [BurstCompile]
+    [BurstCompile]
     public struct CreatePlaneJob : IJob
     {
         [ReadOnly] 
         public Vector2Int PlaneSize;
         
-       // [WriteOnly] 
         public MeshData MeshData;
 
         public void Execute()
@@ -49,9 +48,9 @@ namespace MeshDeform
             {
                 var vert =  new Vector3(-width/2 + (xOffset * (i % (PlaneSize.x+1))),0, length/2 + (-yOffset * (i / (PlaneSize.x+1))));
                 MeshData.Vertices[i] = vert;
+                MeshData.BaseVertices[i] = vert;
                 
-                
-                MeshData.Uv[i] = new Vector2(  Normalize(vert.x,width/2,-width/2), Normalize(vert.y,length/2,-length/2));
+                MeshData.UVs[i] = new Vector2(vert.x / PlaneSize.x, vert.z / PlaneSize.y);
             }
 
             for (int ti = 0, vi = 0, y = 0; y < PlaneSize.y; y++, vi++) 
@@ -72,10 +71,7 @@ namespace MeshDeform
     [BurstCompile]
     public struct WavePlaneJob : IJobParallelFor
     {
-        public NativeArray<float3> Vertices;
-        
-        [ReadOnly] 
-        public NativeArray<float2> UVs;
+        public MeshData MeshData;
 
         [ReadOnly] 
         public float WaveStrength;
@@ -88,8 +84,8 @@ namespace MeshDeform
             
         public void Execute(int index)
         {
-            var vertex = Vertices[index];
-            var uv = UVs[index];
+            var vertex = MeshData.BaseVertices[index];
+            var uv = MeshData.UVs[index];
             
             float sinOff=(vertex.x+vertex.y+vertex.z) * WaveStrength;
             float t=-Time * WaveSpeed;
@@ -101,7 +97,7 @@ namespace MeshDeform
             vertex.y =  math.sin(t*3.12f + sinOff) * fx * 0.5f-fy * 0.9f;
             vertex.z -= math.sin(t*2.2f  + sinOff) * fx * 0.2f;
             
-            Vertices[index] = vertex;
+            MeshData.Vertices[index] = vertex;
         }
     }
     
@@ -109,14 +105,22 @@ namespace MeshDeform
     [BurstCompile]
     public struct RefreshJob : IJobParallelFor
     {
+        [ReadOnly] 
+        public Vector2Int PlaneSize;
+        
         public NativeArray<float3> Vertices;
         
-        public void Execute(int index)
+        public void Execute(int i)
         {
-            var vertex = Vertices[index];
-           
-            vertex = float3.zero;
-            Vertices[index] = vertex;
+            var width  = (PlaneSize.x * PlaneSize.x);
+            var length = (PlaneSize.y * PlaneSize.y);
+            
+            var xOffset = width / PlaneSize.x;
+            var yOffset = length / PlaneSize.y;
+            
+            
+            var vert =  new Vector3(-width/2 + (xOffset * (i % (PlaneSize.x+1))),0, length/2 + (-yOffset * (i / (PlaneSize.x+1))));
+            Vertices[i] = vert;
         }
     }
 }

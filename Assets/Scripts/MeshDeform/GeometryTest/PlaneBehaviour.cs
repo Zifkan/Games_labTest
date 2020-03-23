@@ -40,7 +40,7 @@ namespace Mesh.GeometryTest
 
             _meshData.Vertices = new NativeArray<float3>(vertexCount, Allocator.Persistent);
             _meshData.Triangles = new NativeArray<int>(triangleCount, Allocator.Persistent);
-            _meshData.Uv = new NativeArray<float2>(vertexCount, Allocator.Persistent);
+            _meshData.UVs = new NativeArray<float2>(vertexCount, Allocator.Persistent);
 
             var job = new CreatePlaneJob
             {
@@ -65,7 +65,7 @@ namespace Mesh.GeometryTest
         {
             _mesh.SetVertices(_meshData.Vertices);
             _mesh.SetTriangles(_meshData.Triangles.ToArray(),0);
-            _mesh.SetUVs(0,_meshData.Uv);
+            _mesh.SetUVs(0,_meshData.UVs);
             _mesh.RecalculateNormals();
             _meshFilter.sharedMesh = _mesh;
         }

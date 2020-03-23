@@ -3,14 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GeometryTest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GeometryTest.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flag.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Flag.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/1af3cf-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ModuleFactoryScriptableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/HealthModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldRestoreModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Weapon.cs" />
@@ -150,7 +150,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Metro/MetroBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/SelectShipMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Shaders/Flag.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/WeaponModuleFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Shell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/SpaceShips/BaseSpaceShip.cs" />
@@ -159,9 +158,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/BattleController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ShipPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Flag.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" />
       </list>
     </option>
   </component>
@@ -213,7 +214,7 @@
       <workItem from="1584630349701" duration="29283000" />
       <workItem from="1584867606120" duration="490000" />
       <workItem from="1584868116939" duration="48000" />
-      <workItem from="1584868212205" duration="61666000" />
+      <workItem from="1584868212205" duration="65129000" />
     </task>
     <servers />
   </component>

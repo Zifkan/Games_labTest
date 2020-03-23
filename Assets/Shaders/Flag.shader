@@ -13,6 +13,7 @@ Properties
    
     _WaveSpeed ("Wave Speed", Range(0.0, 300.0)) = 50.0
     _WaveStrength ("Wave Strength", Range(0.0, 5.0)) = 1.0
+    _time("Time",float) = 0.0
 }
  
  

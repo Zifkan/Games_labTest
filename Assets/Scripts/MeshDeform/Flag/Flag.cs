@@ -43,15 +43,19 @@ namespace MeshDeform.Flag
         private UnityEngine.Mesh _mesh;
 
         private TypeCalculation _lastCalc;
-        
+        private  MaterialPropertyBlock _mpb;
+
         private void Awake()
         {
+            _mpb = new MaterialPropertyBlock();
             var vertexCount = (_planeSize.x+1) *( _planeSize.y+1);
             var triangleCount = _planeSize.x  * _planeSize.y  *6;
 
             _meshData.Vertices = new NativeArray<float3>(vertexCount, Allocator.Persistent);
+            _meshData.BaseVertices = new NativeArray<float3>(vertexCount, Allocator.Persistent);
             _meshData.Triangles = new NativeArray<int>(triangleCount, Allocator.Persistent);
-            _meshData.Uv = new NativeArray<float2>(vertexCount, Allocator.Persistent);
+            _meshData.UVs = new NativeArray<float2>(vertexCount, Allocator.Persistent);;
+            
             
             var job = new CreatePlaneJob
             {
@@ -77,9 +81,10 @@ namespace MeshDeform.Flag
         {
             _mesh.SetVertices(_meshData.Vertices);
             _mesh.SetTriangles(_meshData.Triangles.ToList(),0);
-            _mesh.SetUVs(0,_meshData.Uv);
+            _mesh.SetUVs(0,_meshData.UVs);
             _mesh.RecalculateNormals();
             _meshFilter.sharedMesh = _mesh;
+            _meshRenderer.GetPropertyBlock(_mpb);
         }
 
         private void Update()
@@ -88,23 +93,28 @@ namespace MeshDeform.Flag
 
             if (_calc == TypeCalculation.CPU)
             {
-                var job = new WavePlaneJob
+                _jobHandle = new WavePlaneJob
                 {
-                    UVs = _meshData.Uv,
                     Time = Time.timeSinceLevelLoad,
                     WaveSpeed = _waveSpeed,
                     WaveStrength = _waveStrength,
-                    Vertices = _meshData.Vertices
-                };
-
-                _jobHandle = job.Schedule(_meshData.Vertices.Length, 128,_jobHandle);
+                    MeshData = _meshData
+                }.Schedule(_meshData.Vertices.Length, 128,_jobHandle);
+               
+               
                 _jobHandle.Complete();
+            }
+
+            if (_calc == TypeCalculation.GPU)
+            {
+                _mpb.SetFloat("_WaveSpeed",_waveSpeed);
+                _mpb.SetFloat("_WaveStrength",_waveStrength);
+                _mpb.SetFloat("_time",Time.timeSinceLevelLoad);
+                _meshRenderer.SetPropertyBlock(_mpb);
             }
 
             _mesh.SetVertices(_meshData.Vertices);
             _mesh.RecalculateNormals();
-            _meshFilter.sharedMesh = _mesh;
-           
         }
 
 
@@ -115,25 +125,17 @@ namespace MeshDeform.Flag
             if (_calc == TypeCalculation.CPU)
             {
                 _meshRenderer.material = _cpuMat;
-                
-                var job = new RefreshJob()
-                {
-                    Vertices = _meshData.Vertices
-                };
-                    
-                    
-                _jobHandle = job.Schedule(_meshData.Vertices.Length, 128,_jobHandle);
-
-                _jobHandle.Complete();
             }
 
             if (_calc == TypeCalculation.GPU)
             {
                 _meshRenderer.material = _gpuMat;
             }
+
+            _lastCalc = _calc;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _meshData.Dispose();
         }
