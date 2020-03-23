@@ -6,7 +6,6 @@
     <e p="F:\GameLabs_Test" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Grid.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="MeshDeform" t="Include">
             <e p="CustomJobs.cs" t="Include" />
@@ -68,7 +67,7 @@
           </e>
         </e>
         <e p="Shaders" t="Include">
-          <e p="Flag.shader" t="Include" />
+          <e p="FlagShader.shader" t="Include" />
           <e p="PerlinNoise.shader" t="Include" />
           <e p="Wave_cginc.cginc" t="Include" />
         </e>

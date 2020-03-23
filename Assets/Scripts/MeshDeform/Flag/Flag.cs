@@ -120,6 +120,9 @@ namespace MeshDeform.Flag
                 _meshRenderer.GetPropertyBlock(_mpb);
                 _mpb.SetFloat("_WaveSpeed",_waveSpeed);
                 _mpb.SetFloat("_WaveStrength",_waveStrength);
+                _mpb.SetFloat("_ScrollXSpeed",_scrollX);
+                _mpb.SetFloat("_ScrollYSpeed",_scrollY);
+                _mpb.SetFloat("_time",Time.timeSinceLevelLoad);
                 _meshRenderer.SetPropertyBlock(_mpb);
             }
 

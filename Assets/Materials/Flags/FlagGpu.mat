@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FlagGpu
-  m_Shader: {fileID: 4800000, guid: f4ab11a04d14ed94da7ed2951282be96, type: 3}
+  m_Shader: {fileID: 4800000, guid: b3850091ffe66594d9fae162be0a9e84, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -72,7 +72,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveSpeed: 76
+    - _WaveSpeed: 70
     - _WaveStrength: 3.81
     - _ZWrite: 1
     - _time: 20.88

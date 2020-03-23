@@ -2,10 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d33a4-4c7f-4b8a-969f-dea7408af767" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/FlagShader.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameLabs_Test/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagCpu.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagCpu.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagGpu.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/FlagGpu.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Normal Map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Normal Map.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FlagScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FlagScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flag.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flag.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UV.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptMapper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/41874e-mainStage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +66,7 @@
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/c7/49987bcc/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ShieldModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/FlagShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C074160-DD1A-4D91-9B45-B6E4C27A3BAC/e4/3884ee5f/Module.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Enums/GameStage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C074160-DD1A-4D91-9B45-B6E4C27A3BAC/d1/da8ea1ff/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -53,7 +74,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/UI/IShipMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../ocean-simulation/Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PerlinNoise.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Flag.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../NoiseShader/Assets/NoiseTest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/ReloadModuleFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Metro/FindWayAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
@@ -79,7 +99,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/39/f91b96cc/NativeArrayOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Grid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpaceBattle/BattleController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/InspectorExpandedItems.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58A34B0A-618D-424B-B5FC-18BB9BCDAC20/c0/e3592da0/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -106,8 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldRestoreModule.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/RealoadModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/ShieldModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Modules/Factory/IShipModuleFactory.cs" />
@@ -152,11 +169,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpaceBattle/Utils/ShipPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/GeometryTest/PlaneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Flag2.shader" />
-        <option value="$PROJECT_DIR$/Assets/Shaders/Flag.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/CustomJobs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Flag.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Flag 1.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Wave_cginc.cginc" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDeform/Flag/Flag.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/FlagShader.shader" />
       </list>
     </option>
   </component>
@@ -208,7 +227,7 @@
       <workItem from="1584630349701" duration="29283000" />
       <workItem from="1584867606120" duration="490000" />
       <workItem from="1584868116939" duration="48000" />
-      <workItem from="1584868212205" duration="80996000" />
+      <workItem from="1584868212205" duration="84595000" />
     </task>
     <servers />
   </component>

@@ -58,7 +58,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\Scripts\MeshDeform\CustomJobs.cs" />
      <Compile Include="Assets\Scripts\MeshDeform\Flag\Flag.cs" />
      <Compile Include="Assets\Scripts\MeshDeform\GeometryTest\PlaneBehaviour.cs" />
@@ -93,7 +92,7 @@
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ScriptableObjectUtility.cs" />
      <Compile Include="Assets\Scripts\SpaceBattle\Utils\ShipPlacer.cs" />
-     <None Include="Assets\Shaders\Flag.shader" />
+     <None Include="Assets\Shaders\FlagShader.shader" />
      <None Include="Assets\Shaders\Wave_cginc.cginc" />
      <None Include="Assets\Shaders\PerlinNoise.shader" />
  <Reference Include="Unity.Timeline.Editor">
