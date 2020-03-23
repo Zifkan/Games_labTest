@@ -28,6 +28,11 @@ namespace MeshDeform.Flag
         
         [SerializeField] [Range(0,5f)]
         private float _waveStrength;
+        
+        [SerializeField] 
+        private float _scrollX = 1;
+        [SerializeField] 
+        private float _scrollY = 1;
 
         [SerializeField] 
         private TypeCalculation _calc;
@@ -104,6 +109,10 @@ namespace MeshDeform.Flag
                
                
                 _jobHandle.Complete();
+
+                var offsetX = Time.time * _scrollX;
+                var offsetY = Time.time * _scrollY;
+                _meshRenderer.material.mainTextureOffset = new Vector2(offsetX,offsetY);
             }
 
             if (_calc == TypeCalculation.GPU)
