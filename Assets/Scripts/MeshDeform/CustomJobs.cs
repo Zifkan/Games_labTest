@@ -27,14 +27,12 @@ namespace MeshDeform
         }
     }
 
+    [BurstCompile]
     public struct CreatePlaneJob : IJob
     {
         [ReadOnly] 
         public Vector2Int PlaneSize;
         
-        [ReadOnly] 
-        public int VertCount;
-
         [WriteOnly] 
         public MeshData MeshData;
 
@@ -61,6 +59,7 @@ namespace MeshDeform
                 for (int x = 0; x <= PlaneSize.x; x++, i++) 
                 {
                     MeshData.Vertices[i] = new Vector3(x,0, y);
+                    MeshData.Uv[i] = new Vector2((float)x / PlaneSize.x, (float)y / PlaneSize.y);
                 }
             }
             

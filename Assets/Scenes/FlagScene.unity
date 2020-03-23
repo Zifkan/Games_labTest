@@ -327,9 +327,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bd48d0451846989a166e32ddd8e074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _planeSize: {x: 3, y: 3}
+  _planeSize: {x: 128, y: 128}
   _meshFilter: {fileID: 1806459153}
-  _meshColor: {r: 1, g: 1, b: 1, a: 1}
+  _waveSpeed: 3
+  _waveStrength: 5
 --- !u!4 &1806459152
 Transform:
   m_ObjectHideFlags: 0

@@ -46,7 +46,6 @@ namespace Mesh.GeometryTest
             {
                 MeshData = _meshData,
                 PlaneSize = _planeSize,
-                VertCount = vertexCount,
             };
 
             _jobHandle = job.Schedule();

@@ -39,7 +39,6 @@ namespace MeshDeform.Flag
             {
                 MeshData = _meshData,
                 PlaneSize = _planeSize,
-                VertCount = vertexCount,
             };
 
             _jobHandle = job.Schedule();
@@ -82,11 +81,12 @@ namespace MeshDeform.Flag
                 Vertices =  _meshData.Vertices,
             };
             
-            _jobHandle =  job.Schedule(_meshData.Vertices.Length, 32);
+            _jobHandle =  job.Schedule(_meshData.Vertices.Length, 128);
             
             _jobHandle.Complete();
             
             _mesh.SetVertices(_meshData.Vertices);
+            _mesh.RecalculateNormals ();
         }
 
         private void OnDisable()
