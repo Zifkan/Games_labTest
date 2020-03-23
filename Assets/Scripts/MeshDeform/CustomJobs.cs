@@ -27,19 +27,19 @@ namespace MeshDeform
         }
     }
 
-    [BurstCompile]
+  //  [BurstCompile]
     public struct CreatePlaneJob : IJob
     {
         [ReadOnly] 
         public Vector2Int PlaneSize;
         
-        [WriteOnly] 
+       // [WriteOnly] 
         public MeshData MeshData;
 
         public void Execute()
         {
-            var width  = (PlaneSize.x * PlaneSize.x);// * .5f;
-            var length = (PlaneSize.y * PlaneSize.y);// * .5f;
+            var width  = (PlaneSize.x * PlaneSize.x);
+            var length = (PlaneSize.y * PlaneSize.y);
             
             var xOffset = width / PlaneSize.x;
             var yOffset = length / PlaneSize.y;
@@ -49,19 +49,11 @@ namespace MeshDeform
             {
                 var vert =  new Vector3(-width/2 + (xOffset * (i % (PlaneSize.x+1))),0, length/2 + (-yOffset * (i / (PlaneSize.x+1))));
                 MeshData.Vertices[i] = vert;
-                MeshData.Uv[i] = new Vector2(vert.x / (PlaneSize.x), vert.y / (PlaneSize.y));
+                
+                
+                MeshData.Uv[i] = new Vector2(  Normalize(vert.x,width/2,-width/2), Normalize(vert.y,length/2,-length/2));
             }
-            
-            // for (int i = 0, y = 0; y <= PlaneSize.y; y++)
-            // {
-            //     for (int x = 0; x <= PlaneSize.x; x++, i++) 
-            //     {
-            //         MeshData.Vertices[i] = new Vector3(x,0, y);
-            //         MeshData.Uv[i] = new Vector2((float)x / PlaneSize.x, (float)y / PlaneSize.y);
-            //     }
-            // }
-            
-            
+
             for (int ti = 0, vi = 0, y = 0; y < PlaneSize.y; y++, vi++) 
             {
                 for (int x = 0; x < PlaneSize.x; x++, ti += 6, vi++) 
@@ -73,6 +65,8 @@ namespace MeshDeform
                 }
             }
         }
+        
+        static float  Normalize(float val,float max,float min) { return (val - min) / (max - min); }
     }
     
     [BurstCompile]

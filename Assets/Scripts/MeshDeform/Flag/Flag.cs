@@ -52,7 +52,7 @@ namespace MeshDeform.Flag
             _meshData.Vertices = new NativeArray<float3>(vertexCount, Allocator.Persistent);
             _meshData.Triangles = new NativeArray<int>(triangleCount, Allocator.Persistent);
             _meshData.Uv = new NativeArray<float2>(vertexCount, Allocator.Persistent);
-
+            
             var job = new CreatePlaneJob
             {
                 MeshData = _meshData,
