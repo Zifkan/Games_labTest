@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using SpaceBattle.Modules;
 using SpaceBattle.SpaceShips;
 using UnityEngine;
@@ -36,13 +37,14 @@ namespace SpaceBattle
                 _battlePoints.Remove(point);
                 ship.DeadEvent+=OnDead;
                 ship.Fight();
-              
             }
+            
+            ShipsFacing(_ships);
         }
 
-        private void Update()
+        private void ShipsFacing(List<BaseSpaceShip> ships)
         {
-            for (int i = 0; i < _ships.Count; i++)
+            for (int i = 0; i < ships.Count; i++)
             {
                 var ship = _ships[i];
                 ShipLookAt(ship, i);
@@ -56,12 +58,16 @@ namespace SpaceBattle
 
         private void OnDead(object sender, EventArgs e)
         {
-            _ships.Remove((BaseSpaceShip) sender);
-            
-            if (_ships.Count <= 1)
+            ((BaseSpaceShip) sender).gameObject.SetActive(false);
+
+            var activeShips = _ships.Where(ship => ship.isActiveAndEnabled).ToList();
+
+            if (activeShips.Count <= 1)
             {
                 GameController.Instance.EndFight();
             }
+            
+            ShipsFacing(activeShips);
         }
 
         private void ShipLookAt(BaseSpaceShip ship,int index)

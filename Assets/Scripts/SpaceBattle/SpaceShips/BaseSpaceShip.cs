@@ -43,6 +43,8 @@ namespace SpaceBattle.SpaceShips
         private List<WeaponModuleFactory.Weapon> _weapons = new List<WeaponModuleFactory.Weapon>();
 
         private ObjectPool<Shell> _shellPool;
+
+        private bool _isDead;
         
         public float CoolDownFactorPercent => _coolDownFactor;
         public List<Slot> SlotsCollection => _slots;
@@ -119,6 +121,7 @@ namespace SpaceBattle.SpaceShips
 
         public void Reset()
         {
+            _isDead = false;
             _gameStage = GameStage.ShipConstruct;
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
@@ -147,7 +150,7 @@ namespace SpaceBattle.SpaceShips
 
         private void Update()
         {
-            if (_gameStage == GameStage.ShipConstruct) return;
+            if (_isDead || _gameStage == GameStage.ShipConstruct) return;
             
             ShieldRestore();
             Fire();
@@ -179,9 +182,10 @@ namespace SpaceBattle.SpaceShips
 
         private void Death()
         {
-            if (_currentHealth <= 0)
+            if (!_isDead && _currentHealth <= 0)
             {
                 OnDeadEvent();
+                _isDead = true;
             }
         }
 

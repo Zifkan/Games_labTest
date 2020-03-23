@@ -34,8 +34,10 @@ namespace SpaceBattle.Utils
                 if (i >= objectsCount) return;
                 
                 var tr = ships[i].transform;
+                tr.gameObject.SetActive(true);
                 tr.SetParent(_shipsContainer.transform);
                 tr.position =  new Vector3(_startPos.x + (_offset.x * (i % _columnCount)), _startPos.y + (-_offset.y * (i / _rowCount)),0);
+                tr.eulerAngles = new Vector3(0,0,0);
             }
         }
     }
