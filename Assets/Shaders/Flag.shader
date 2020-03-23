@@ -7,10 +7,7 @@ Properties
     _SpecColor ("Specular Color", Color) = (0.5, 0.5, 0.5, 0)
     _Shininess ("Shininess", Range (0.01, 1)) = 0.078125
     _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" {}
- 
-    //_Parallax ("Height", Range (0.005, 0.08)) = 0.02
-    _BumpMap ("Normalmap", 2D) = "bump" {}
-    //_ParallaxMap ("Heightmap (A)", 2D) = "black" {}   
+    _BumpMap ("Normalmap", 2D) = "bump" {}   
   
     _Cutoff ("Shadow Alpha cutoff", Range(0.25,0.9)) = 1.0 
    
@@ -74,13 +71,11 @@ CGPROGRAM
         half _Shininess;
  
         sampler2D _BumpMap;
-        //sampler2D _ParallaxMap;
         float _Parallax;
  
         struct Input {
             float2 uv_MainTex;
             float2 uv_BumpMap;
-            //float3 viewDir;
         };
  
         v2f vert (inout appdata_full v) {
@@ -90,18 +85,11 @@ CGPROGRAM
         }
  
         void surf (Input IN, inout SurfaceOutput o) {
-            // Comment the next 4 following lines to get a standard bumped rendering
-            // [Without Parallax usage, which can cause strange result on the back side of the plane]
-            /*half h = tex2D (_ParallaxMap, IN.uv_BumpMap).w;
-            float2 offset = ParallaxOffset (h, _Parallax, IN.viewDir);
-            IN.uv_MainTex += offset;
-            IN.uv_BumpMap += offset;*/
- 
+            
             fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
             o.Albedo = tex.rgb * _Color.rgb;
             o.Gloss = tex.a;
             o.Alpha = tex.a * _Color.a;
-            //clip(o.Alpha - _Cutoff);
             o.Specular = _Shininess;
             o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
         }

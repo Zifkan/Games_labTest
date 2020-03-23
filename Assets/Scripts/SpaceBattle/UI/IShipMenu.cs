@@ -11,6 +11,7 @@ namespace SpaceBattle.UI
         event EventHandler<ButtonModuleEventArgs> SetModuleEvent;
         event EventHandler<ButtonSlotEventArgs> DetachModuleEvent;
         event EventHandler<int> SelectShipEvent;
+        event EventHandler StartFight;
 
         void SetModulesCollection(List<IShipModuleFactory> modules);
         void Refresh(List<Slot> modules);

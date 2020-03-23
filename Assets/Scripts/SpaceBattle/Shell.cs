@@ -20,16 +20,6 @@ namespace SpaceBattle
             _direction = direction;
         }
 
-        private void OnCollisionEnter(Collision other)
-        {
-            var ship = other.gameObject.GetComponent<BaseSpaceShip>();
-            
-            if (ship!=null && gameObject != ship.gameObject)
-            {
-                ship.GetDamage(_damage);
-                _shellPool.ReturnToPool(this);
-            }
-        }
 
         public void PrepareToUse()
         {
@@ -44,6 +34,19 @@ namespace SpaceBattle
         private void Update()
         {
             transform.position += _direction * Time.deltaTime * _movementSpeed;
+
+            if (Physics.Raycast(new Ray(transform.position,transform.forward),out RaycastHit hitInfo,1f))
+            {
+                var ship = hitInfo.transform.GetComponent<BaseSpaceShip>();
+            
+                if (ship!=null && gameObject != ship.gameObject)
+                {
+                    ship.GetDamage(_damage);
+                    _shellPool.ReturnToPool(this);
+                }
+            }
         }
+        
+        
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4783006904812040639}
   - component: {fileID: 1502003274229620170}
   - component: {fileID: 6697524310546866888}
-  - component: {fileID: 5313439707598054899}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5313439707598054899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6228393012222695122}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6771663816367498669
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5045434214871568429}
   - component: {fileID: 2771605841438397872}
+  - component: {fileID: 149670051623971898}
   m_Layer: 0
   m_Name: ShipA
   m_TagString: Untagged
@@ -151,3 +138,16 @@ MonoBehaviour:
     _transformPlace: {fileID: 0}
   _shellPrefab: {fileID: 6683412032904985705, guid: ed625ca00fe0f7d4da82320bda68df75,
     type: 3}
+--- !u!65 &149670051623971898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771663816367498669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}

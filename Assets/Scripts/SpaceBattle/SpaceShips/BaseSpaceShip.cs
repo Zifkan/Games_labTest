@@ -106,7 +106,9 @@ namespace SpaceBattle.SpaceShips
         public void GetDamage(float damage)
         {
             var shieldDelta = _currentShield - damage;
-
+            
+            _currentShield = shieldDelta;
+            
             if (shieldDelta < 0)
             {
                 _currentHealth += shieldDelta;
@@ -115,6 +117,7 @@ namespace SpaceBattle.SpaceShips
 
         public void Reset()
         {
+            _gameStage = GameStage.ShipConstruct;
             _maxHealth = _healthBase;
             _maxShield = _shieldBase;
             _currentShieldRestorePerSec = _shieldRestorePerSecBase;
@@ -136,7 +139,6 @@ namespace SpaceBattle.SpaceShips
 
         private void Awake()
         {
-            _gameStage = GameStage.ShipConstruct;
             SlotsInit();
             Reset();
         }

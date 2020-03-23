@@ -38,7 +38,6 @@ namespace SpaceBattle
         private readonly List<BaseSpaceShip> _ships = new List<BaseSpaceShip>();
         private GameStage _gameStage;
         
-        
         public List<BaseSpaceShip> Ships => _ships; // TODO: Possible remove 
        
         private void Start()
@@ -52,18 +51,23 @@ namespace SpaceBattle
                 _ships.Add(instantiatedShip);
             }
             
-            SceneManager.sceneLoaded+=SceneManagerOnsceneLoaded;
+            SceneManager.sceneLoaded += SceneManagerOnSceneLoaded;
             
             _gameStage = GameStage.ShipConstruct;
-            _shipConstructor.Init(_ships,_shipMenu,_placer);
+
+            InitGameModules();
         }
 
-        private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
+        private void InitGameModules()
         {
-            _shipConstructor.Ships.ForEach(ship => ship.Reset());
+            var menu = Instantiate(_shipMenu);
+            
+            _shipConstructor.Init(_ships,menu,_placer);
+            
+            menu.StartFight+= MenuOnStartFight;
         }
 
-        public void StartFight()
+        private void MenuOnStartFight(object sender, EventArgs e)
         {
             _sceneLoadStateInfo.ForEach(info =>
             {
@@ -75,9 +79,19 @@ namespace SpaceBattle
             });
         }
 
+        private void SceneManagerOnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            _shipConstructor.Ships.ForEach(ship => ship.Reset());
+
+            if (_gameStage == GameStage.ShipConstruct)
+            {
+                
+            }
+
+        }
+
         public void EndFight()
         {
-            Debug.Log("End fight");
             _sceneLoadStateInfo.ForEach(info =>
             {
                 if (info.Stage == GameStage.ShipConstruct)

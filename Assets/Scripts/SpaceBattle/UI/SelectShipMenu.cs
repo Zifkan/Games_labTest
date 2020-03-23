@@ -13,6 +13,8 @@ namespace SpaceBattle.UI
         public event EventHandler<ButtonModuleEventArgs> SetModuleEvent;
         public event EventHandler<ButtonSlotEventArgs> DetachModuleEvent;
         public event EventHandler<int> SelectShipEvent;
+        public event EventHandler StartFight;
+
 
         [SerializeField] 
         private CustomButton _button;
@@ -110,6 +112,11 @@ namespace SpaceBattle.UI
         protected virtual void OnSelectShip(int i)
         {
             SelectShipEvent?.Invoke(this, i);
+        }
+
+        public virtual void OnStartFight()
+        {
+            StartFight?.Invoke(this, EventArgs.Empty);
         }
     }
 }
